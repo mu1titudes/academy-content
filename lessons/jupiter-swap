@@ -1,0 +1,51 @@
+---
+title: "Finding the Best Price with Jupiter Swap"
+publishedAt: '2026-02-23'
+image: ''
+badges:
+  - Beginner
+  - 10min
+---
+
+Within the decentralized finance (DeFi) world, a Swap is the instantaneous exchange of one digital asset for another. In traditional finance, this is exactly how Foreign Exchange (FX) or Spot Trading operates. You are simply trading one currency (e.g., $USDC) for another (e.g., $SOL) at the current market rate.
+
+### **Hello, Ultra v3\!**
+
+To ensure you receive the most competitive rates globally, Jupiter utilizes Ultra V3, which functions like an institutional trading desk, scanning the entire market to optimize your trade.
+
+* **Zero transaction fees (gasless)**: On qualifying pairs, Jupiter eliminates the network settlement costs. This is the equivalent of a Zero-Commission trade.  
+* **Optimal Price Discovery**: Ultra V3 aggregates market depth across all major liquidity sources. It doesn't just find one price; it routes your trade through the most efficient path to minimize costs.  
+* **Real-Time Slippage Estimation (RTSE)**: This system monitors slippage in real-time. If the market moves against you during the millisecond of execution, the system adjusts to ensure you aren't "front-run" or overcharged.
+
+### **What Qualifies for Gasless?**
+
+All major verified tokens with high liquidity like $USDC, $SOL, $JUP, and other popular tokens are supported for Gasless trades.  
+You’ll know if the transaction is gasless when there’s a \<icon\> ![][image1]
+
+### **Key Concepts for Swaps**
+
+**Liquidity**: This refers to the depth of the market. Deep liquidity allows you to execute large trades without significantly moving the price (i.e. price Impact). Jupiter taps into the deepest "vaults" on the network to ensure your trade remains stable.
+
+**Slippage**: The difference between your quoted price and the final execution price. High volatility can cause slippage; Ultra V3's RTSE is designed to keep this variance as close to zero as possible.
+
+### **Let’s Swap with Jupiter**
+
+Executing Your Trade
+
+1. Select Pairs: Open the Trade tab and select your "Sell" and "Buy" assets.  
+2. Review Execution Path: Jupiter will show you exactly how it is routing your trade to find the best price.  
+3. Identify Gasless Trades: Look for the \<icon\> indicating a Zero-Fee Settlement.  
+4. Confirm Swap: Click "Swap" to execute the trade instantly on-chain.
+
+\<screenshots of the professional trading interface\>
+
+### **Post-Trade Analysis & History**
+
+Transparency is a core tenet of cryptocurrency. You can audit every transaction, including historical price points and execution methods.
+
+1. Navigate to the Trade section.  
+2. Select the History icon (top left) to view a comprehensive ledger of swaps, limit orders, and recurring buys.
+
+\<screenshots and/or gifs\>
+
+[image1]: <data:image/png;base64,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>
