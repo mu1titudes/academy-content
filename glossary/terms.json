@@ -5,7 +5,7 @@
   },
   {
     "term": "AMM",
-    "definition": "Automated Market Maker is a smart contract that lets you swap tokens instantly by trading against a "liquidity pool" of assets rather than waiting for a specific buyer or seller."
+    "definition": "Automated Market Maker is a smart contract that lets you swap tokens instantly by trading against a \"liquidity pool\" of assets rather than waiting for a specific buyer or seller."
   },
   {
     "term": "APR",
@@ -221,7 +221,7 @@
   },
   {
     "term": "RPC",
-    "definition": "Remote Procedure Call. A "bridge" or communication link that allows your wallet to talk to the blockchain so it can read your balance and send your transactions."
+    "definition": "Remote Procedure Call. A \"bridge\" or communication link that allows your wallet to talk to the blockchain so it can read your balance and send your transactions."
   },
   {
     "term": "Rugpull",
