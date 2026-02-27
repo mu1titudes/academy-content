@@ -1,0 +1,47 @@
+---
+title: "Smart Contracts: Secure On-Chain Agreements"
+publishedAt: '2026-02-23'
+image: ''
+badges:
+  - Intermediate
+  - 10min
+  - Fundamentals
+---
+
+## Smart Contracts: Secure On-Chain Agreements
+
+A smart contract is a self-executing program stored on a [blockchain](academy.jup.ag/lessons/blockchain) that automatically triggers specific actions when predefined conditions are met. Despite the name, they are not "contracts" in the legal sense, nor are they "smart" in terms of artificial intelligence. 
+
+Instead, they are deterministic scripts that replace the need for a central intermediary \- such as a bank, lawyer, or escrow agent \- with immutable code. This allows for complex financial transactions to be executed with absolute transparency and without the risk of human interference.
+
+### **The Mechanics: Deterministic If/Then Logic**
+
+The fundamental power of a smart contract lies in its **deterministic** nature. In a traditional legal agreement, the outcome often depends on the interpretation of language and the enforcement by a third party.
+
+* A smart contract operates on strict mathematical logic: **If** event X occurs, **then** action Y is executed.   
+* Because the code is hosted on a decentralized ledger, once it is deployed, it cannot be stopped, changed, or ignored.
+
+This logic allows for "Programmable Money." For example, a smart contract can be programmed to hold a buyer's funds in escrow and only release them to a seller once a digital shipping receipt is verified by a data provider. 
+
+Because the terms are baked into the blockchain, neither party can "back out" or delay payment once the conditions are fulfilled. The network itself acts as the impartial witness and executor.
+
+### **Removing the Middleman: Trustless Execution**
+
+In traditional finance, trust is expensive. When you trade stocks or buy property, you pay significant fees to clearinghouses and brokers to ensure that both sides fulfill their obligations. Smart contracts enable **Trustless Execution**, meaning you do not need to trust the person you are trading with; you only need to trust the underlying code.
+
+By functioning as an automated escrow agent, smart contracts eliminate "Counterparty Risk" \- the danger that the other person won't deliver their end of the deal. In a decentralized exchange like Jupiter, smart contracts facilitate the simultaneous swap of assets. 
+
+The transaction only succeeds if both the "give" and the "get" occur in the same instant (Atomic Settlement). If one part of the code fails, the entire transaction is reverted as if it never happened, ensuring that your capital is never left in a vulnerable, pending state.
+
+### **Beyond Simple Transfers: Use Cases**
+
+While simple transfers are the baseline, the composability of smart contracts allows for the creation of entire decentralized ecosystems.
+
+* **Decentralized Finance (DeFi):** Smart contracts act as automated market makers, lenders, and insurers. Protocols can automatically calculate interest rates based on supply and demand or liquidate collateral if a borrower's position becomes under-capitalized, all without a single human employee.  
+* **DAOs (Decentralized Autonomous Organizations):** Smart contracts can manage the governance of an entire company. Votes are cast on-chain, and if a proposal passes, the contract automatically moves funds or changes protocol parameters according to the result.
+
+### **The Trade-offs: "Code is Law" and Its Risks**
+
+The immutability of smart contracts is their greatest strength, but it is also their primary vulnerability. This is often summarized as the **"Code is Law"** philosophy. Because a contract cannot be changed once deployed, any bug or "exploit" in the code is also immutable.
+
+If a developer leaves a "backdoor" or a logic error in the contract, an attacker can exploit it to drain funds, and there is no central "reversal" button to get the money back. Unlike a bank that can freeze a fraudulent transaction, a blockchain will faithfully execute the code exactly as it is written, even if the outcome is clearly unintended. This makes **Security Audits** \- the process of having independent experts review the code before deployment-one of the most critical steps in the lifecycle of any on-chain product.

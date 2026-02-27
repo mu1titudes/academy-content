@@ -5,7 +5,7 @@
   },
   {
     "term": "AMM",
-    "definition": "Automated Market Maker. A decentralized exchange mechanism that uses liquidity pools and algorithms to price assets instead of traditional order books."
+    "definition": "Automated Market Maker is a smart contract that lets you swap tokens instantly by trading against a "liquidity pool" of assets rather than waiting for a specific buyer or seller."
   },
   {
     "term": "APR",
@@ -117,7 +117,7 @@
   },
   {
     "term": "Keypair",
-    "definition": "A pair of cryptographic keys (public key and private key) used to sign transactions and prove ownership of a wallet."
+    "definition": "A pair of cryptographic keys (a public key and a private key) used to sign transactions and prove ownership of a wallet."
   },
   {
     "term": "Lending Pool",
@@ -144,6 +144,10 @@
     "definition": "A collection of tokens locked in a smart contract that provides liquidity for decentralized trading."
   },
   {
+    "term": "Liquid Staking Token",
+    "definition": "A token (like jupSOL) that represents your staked SOL, allowing you to earn staking rewards while still being able to use the token in DeFi apps like lending or trading."
+  },
+  {
     "term": "LTV",
     "definition": "Loan-to-Value ratio. The ratio of a loan amount to the value of the collateral backing it. A higher LTV means higher liquidation risk."
   },
@@ -157,7 +161,7 @@
   },
   {
     "term": "MEV",
-    "definition": "Maximum Extractable Value. The profit that can be made by reordering, inserting, or censoring transactions within a block."
+    "definition": "Maximum Extractable Value. The profit a blockchain validator can make by strategically reordering, adding, or delaying transactions within a block to take advantage of price differences. Effectively, it's the extra profit that others can make by jumping in front of your trade to buy a token first and then immediately selling it back to you at a slightly higher price."
   },
   {
     "term": "Minting",
@@ -217,11 +221,11 @@
   },
   {
     "term": "RPC",
-    "definition": "Remote Procedure Call. An endpoint that allows applications to communicate with a blockchain node to read data or submit transactions."
+    "definition": "Remote Procedure Call. A "bridge" or communication link that allows your wallet to talk to the blockchain so it can read your balance and send your transactions."
   },
   {
     "term": "Rugpull",
-    "definition": "A scam where project creators abandon a project and run away with investor funds."
+    "definition": "A scam where project creators abandon a project and run away with investor funds. Commonly shortened to 'rug'."
   },
   {
     "term": "Seed Phrase",

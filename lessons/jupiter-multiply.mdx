@@ -7,24 +7,29 @@ badges:
   - Multiply
 ---
 
+## Scaling Exposure with Jupiter Multiply
+
 **Jupiter Multiply** is a high-efficiency tool designed for traders who want to increase their exposure to an asset through leverage without the complexity of manual "looping." By using your existing assets as collateral to borrow and reinvest, Multiply allows you to scale your position size in a single click.
 
 This mechanism functions similarly to **Margin Trading** or a **Lombard Loan** in TradFi, where capital is borrowed against existing securities to increase overall market exposure. It bridges the gap between simple spot trading and complex perpetual contracts, offering a streamlined way to express a bullish thesis on the Solana ecosystem.
 
+
 ## The Mechanics of One-Click Leverage
 
-At its core, Multiply automates the process of "leveraging up." On other DeFi platforms, increasing exposure might usually require multiple steps: depositing collateral, borrowing a stablecoin, swapping for more of the original asset, and repeating.
+At its core, Multiply automates the process of "leveraging up." On other DeFi platforms, increasing exposure might usually require multiple steps: depositing collateral, [borrowing](academy.jup.ag/lessons/jupiter-borrow) a stablecoin, swapping for more of the original asset, and repeating.
 
 - **Automated Looping:** Multiply executes these steps simultaneously. It borrows liquidity against your initial deposit to purchase more of the target asset, effectively "multiplying" your price exposure
 - **The Yield Factor:** While your position is leveraged, the underlying assets often still benefit from staking yields or rewards, which can help offset the cost of the borrowed capital
 - **Simplified UX:** Unlike standard margin trading which requires managing multiple accounts, Multiply provides a single dashboard to track your entry price, current leverage, and liquidation point
 
+
 ## The Infrastructure: Powered by Jupiter Lend
 
-Multiply isn't a standalone product; it is a sophisticated interface built on top of the **Jupiter Lend** engine.
+Multiply isn't a standalone product; it is a sophisticated interface built on top of the [Jupiter Lend](academy.jup.ag/lessons/jupiter-earn) engine.
 
 - **Liquidity Sourcing:** When you "multiply" a position, the capital you borrow comes directly from the Jupiter Earn vaults. This ensures that you are accessing deep, protocol-level liquidity at competitive market rates
 - **Variable Interest:** The cost of your leverage (the borrow rate) is dynamic. It shifts based on the utilization of the lending pools, meaning your costs may decrease when liquidity is abundant or increase during periods of high demand
+
 
 ## Risk Management: LTV and Liquidation
 
@@ -36,7 +41,8 @@ Using leverage increases potential gains, but it also introduces unique risks th
 - **Liquidation Price:** This is the specific price point where your LTV reaches the "maximum threshold." At this point, the protocol must sell a portion of your collateral to repay the debt, protecting the lenders in the ecosystem
 - **Health Factor:** Multiply provides a real-time "Health" indicator. Maintaining a high health factor by keeping lower leverage or adding more collateral is the primary way to defend against market volatility
 
-## Operational Execution
+
+## Hands on Jupiter Multiply
 
 ### Step 1: Asset Selection and Leverage
 
