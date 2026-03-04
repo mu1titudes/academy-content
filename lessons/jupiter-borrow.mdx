@@ -4,14 +4,22 @@ publishedAt: '2026-02-10'
 image: ''
 badges:
   - Intermediate
+  - 20min
+  - Product
+hiddenBadges:
+  - Jupiter Borrow
   - Borrow
+  - Lend
+  - Jupiter Lend
 ---
 
-**Jupiter Borrow** is a core component of the Jupiter Lend ecosystem, allowing users to access immediate liquidity by using their digital assets as collateral. Instead of selling your tokens — which could trigger tax events or end your exposure to future price appreciation — Borrow lets you draw a loan against them.
+## Accessing Liquidity with Jupiter Borrow
+
+**Jupiter Borrow** is a core component of the Jupiter Lend ecosystem, allowing users to access immediate liquidity by using their digital assets as collateral. Instead of selling your tokens - which could trigger tax events or end your exposure to future price appreciation - Borrow lets you draw a loan against them.
 
 This mechanism is similar to **Securities-Based Lending** or a **Home Equity Line of Credit (HELOC)** in TradFi, where an existing asset is used to secure a flexible line of credit.
 
-## The Collateralization Model
+### The Collateralization Model
 
 Borrowing on Jupiter is entirely [non-custodial](academy.jup.ag/lessons/wallet) and governed by [smart contracts](academy.jup.ag/lessons/smart-contracts). To take out a loan, you must first "over-collateralize" your position, meaning the value of the assets you deposit must be higher than the value of the assets you borrow.
 
@@ -19,7 +27,7 @@ Borrowing on Jupiter is entirely [non-custodial](academy.jup.ag/lessons/wallet) 
 - **Flexible Repayment:** There are no monthly minimum payments or fixed terms. You can repay your loan in partial installments or all at once, at any time that suits your financial strategy
 - **Interest Accrual:** Borrowing costs are based on the "Borrow Rate," which is dynamically calculated based on the demand for the specific asset you are borrowing from the Jupiter Earn vaults
 
-## Strategic Use Cases
+### Strategic Use Cases
 
 Why borrow instead of selling? Professional participants often use Jupiter Borrow for:
 
@@ -27,7 +35,7 @@ Why borrow instead of selling? Professional participants often use Jupiter Borro
 - **Working Capital:** Accessing cash for real-world expenses or other on-chain opportunities while maintaining a long-term "HODL" position on an asset like SOL
 - **Leverage Management:** Manually creating custom leverage positions that are more specific than the automated "Multiply" presets
 
-## Managing Your Loan-to-Value (LTV)
+### Managing Your Loan-to-Value (LTV)
 
 The most critical metric for any borrower is the **Loan-to-Value (LTV)** ratio. This measures the relationship between your borrowed amount and the market value of your collateral.
 
@@ -35,7 +43,7 @@ The most critical metric for any borrower is the **Loan-to-Value (LTV)** ratio. 
 - **Maximum LTV:** Each asset has a specific limit. If your LTV exceeds this threshold due to a price drop in your collateral, the position becomes under-collateralized
 - **Liquidation:** To protect the lenders who provided the capital, the protocol will automatically sell a portion of your collateral to repay the loan if your LTV reaches the liquidation point
 
-## Operational Execution
+## Let's Start Borrowing
 
 ### Step 1: Deposit Collateral
 
