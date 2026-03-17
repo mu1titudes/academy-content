@@ -11,23 +11,23 @@ hiddenBadges:
 
 ## Scaling Exposure with Jupiter Multiply
 
-**Jupiter Multiply** is a high-efficiency tool designed for traders who want to increase their exposure to an asset through leverage without the complexity of manual "looping." By using your existing assets as collateral to borrow and reinvest, Multiply allows you to scale your position size in a single click.
+**Jupiter Multiply** is a high-efficiency tool designed for traders who want to increase their exposure to an asset through leverage without the complexity of manual "looping." By using your existing assets as collateral to borrow and reinvest, <Term id="multiply">Multiply</Term> allows you to scale your position size in a single click.
 
-This mechanism functions similarly to **Margin Trading** or a **Lombard Loan** in TradFi, where capital is borrowed against existing securities to increase overall market exposure. It bridges the gap between simple spot trading and complex perpetual contracts, offering a streamlined way to express a bullish thesis on the Solana ecosystem.
+This mechanism functions similarly to **Margin Trading** or a **Lombard Loan** in TradFi, where capital is borrowed against existing securities to increase overall market exposure. It bridges the gap between simple spot trading and complex perpetual contracts, offering a streamlined way to express a bullish thesis on the <Term id="solana">Solana</Term> ecosystem.
 
 
 ### The Mechanics of One-Click Leverage
 
-At its core, Multiply automates the process of "leveraging up." On other DeFi platforms, increasing exposure might usually require multiple steps: depositing collateral, [borrowing](/lessons/jupiter-borrow) a stablecoin, swapping for more of the original asset, and repeating.
+At its core, <Term id="multiply">Multiply</Term> automates the process of "leveraging up." On other <Term id="defi">DeFi</Term> platforms, increasing exposure might usually require multiple steps: depositing collateral, [borrowing](/lessons/jupiter-borrow) a stablecoin, swapping for more of the original asset, and repeating.
 
-- **Automated Looping:** Multiply executes these steps simultaneously. It borrows liquidity against your initial deposit to purchase more of the target asset, effectively "multiplying" your price exposure
-- **The Yield Factor:** While your position is leveraged, the underlying assets often still benefit from staking yields or rewards, which can help offset the cost of the borrowed capital
-- **Simplified UX:** Unlike standard margin trading which requires managing multiple accounts, Multiply provides a single dashboard to track your entry price, current leverage, and liquidation point
+- **Automated Looping:** <Term id="multiply">Multiply</Term> executes these steps simultaneously. It borrows liquidity against your initial deposit to purchase more of the target asset, effectively "multiplying" your price exposure
+- **The <Term id="yield">Yield</Term> Factor:** While your position is leveraged, the underlying assets often still benefit from staking yields or rewards, which can help offset the cost of the borrowed capital
+- **Simplified UX:** Unlike standard margin trading which requires managing multiple accounts, <Term id="multiply">Multiply</Term> provides a single dashboard to track your entry price, current leverage, and liquidation point
 
 
 ### The Infrastructure: Powered by Jupiter Lend
 
-Multiply isn't a standalone product; it is a sophisticated interface built on top of the [Jupiter Lend](/lessons/jupiter-earn) engine.
+<Term id="multiply">Multiply</Term> isn't a standalone product; it is a sophisticated interface built on top of the [Jupiter Lend](/lessons/jupiter-earn) engine.
 
 - **Liquidity Sourcing:** When you "multiply" a position, the capital you borrow comes directly from the Jupiter Earn vaults. This ensures that you are accessing deep, protocol-level liquidity at competitive market rates
 - **Variable Interest:** The cost of your leverage (the borrow rate) is dynamic. It shifts based on the utilization of the lending pools, meaning your costs may decrease when liquidity is abundant or increase during periods of high demand
@@ -39,9 +39,9 @@ Using leverage increases potential gains, but it also introduces unique risks th
 
 ### Key Risk Metrics
 
-- **Loan-to-Value (LTV):** This is the ratio of your borrowed debt to the value of your collateral. If the price of your asset drops, your LTV rises
-- **Liquidation Price:** This is the specific price point where your LTV reaches the "maximum threshold." At this point, the protocol must sell a portion of your collateral to repay the debt, protecting the lenders in the ecosystem
-- **Health Factor:** Multiply provides a real-time "Health" indicator. Maintaining a high health factor by keeping lower leverage or adding more collateral is the primary way to defend against market volatility
+- **Loan-to-Value (LTV):** This is the ratio of your borrowed debt to the value of your collateral. If the price of your asset drops, your <Term id="ltv">LTV</Term> rises
+- **Liquidation Price:** This is the specific price point where your <Term id="ltv">LTV</Term> reaches the "maximum threshold." At this point, the protocol must sell a portion of your collateral to repay the debt, protecting the lenders in the ecosystem
+- **Health Factor:** <Term id="multiply">Multiply</Term> provides a real-time "Health" indicator. Maintaining a high health factor by keeping lower leverage or adding more collateral is the primary way to defend against market volatility
 
 
 ## Hands on Jupiter Multiply
@@ -52,8 +52,8 @@ Navigate to jup.ag/multiply. Select the asset you want to leverage (e.g., **SOL*
 
 ### Step 2: Reviewing the Manifest
 
-Before confirming, review the **Liquidation Price** and the **Net APY**. The Net APY accounts for the rewards earned by your assets minus the interest cost of your borrowed funds.
+Before confirming, review the **Liquidation Price** and the **Net APY**. The Net <Term id="apy">APY</Term> accounts for the rewards earned by your assets minus the interest cost of your borrowed funds.
 
 ### Step 3: Execution and Monitoring
 
-Once you approve the transaction, your "Multiplied" position is active. You can monitor your PnL and Health Factor directly from the dashboard and can choose to "De-leverage" or close the position at any time to lock in gains or reduce risk.
+Once you approve the transaction, your "Multiplied" position is active. You can monitor your <Term id="pnl">PnL</Term> and <Term id="health-factor">Health Factor</Term> directly from the dashboard and can choose to "De-leverage" or close the position at any time to lock in gains or reduce risk.

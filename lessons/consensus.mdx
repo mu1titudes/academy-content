@@ -14,14 +14,14 @@ hiddenBadges:
 
 ## Consensus: The Decentralization of Information
 
-Consensus mechanisms are the protocols that allow a decentralized network of independent computers (nodes) to agree on a single version of the transaction ledger. In traditional finance, a central bank or clearinghouse dictates the truth. In a [blockchain](/lessons/blockchain), the network must reach an agreement mathematically. This process is essential for preventing the "Double-Spend" problem and ensuring the security and integrity of the system without a central coordinator.
+<Term id="consensus">Consensus</Term> mechanisms are the protocols that allow a decentralized network of independent computers (nodes) to agree on a single version of the transaction ledger. In traditional finance, a central bank or clearinghouse dictates the truth. In a [blockchain](/lessons/blockchain), the network must reach an agreement mathematically. This process is essential for preventing the "Double-Spend" problem and ensuring the security and integrity of the system without a central coordinator.
 
 ### The Requirement for Consensus
 The fundamental challenge of a decentralized system is known as the **Byzantine Generals Problem**: How do you reach a reliable agreement among many parties when some of them may be malicious or providing false information? 
 
 ![Consensus](https://static.academy.jup.ag/images/illustrations/consensus.avif)
 
-Consensus mechanisms solve this by introducing a "cost" or a "stake" to participate in the decision-making process. By making it extremely expensive or difficult to cheat, the network ensures that the most economically rational path for any participant is to act honestly. There are several ways to achieve this, each representing a different trade-off between security, speed, and decentralization.
+<Term id="consensus">Consensus</Term> mechanisms solve this by introducing a "cost" or a "stake" to participate in the decision-making process. By making it extremely expensive or difficult to cheat, the network ensures that the most economically rational path for any participant is to act honestly. There are several ways to achieve this, each representing a different trade-off between security, speed, and decentralization.
 
 ### Proof of Work (PoW): Security through Energy
 Proof of Work, the foundational mechanism introduced by Bitcoin, secures the network by requiring participants (miners) to solve complex mathematical puzzles. This "work" serves as a physical barrier to entry, ensuring that the ledger is backed by an unforgeable cost of production. 
@@ -40,8 +40,8 @@ This model is significantly more energy-efficient and allows for much higher tra
 However, Proof of Stake faces ongoing criticism regarding centralization; because those with the most capital earn the most rewards and have the most influence, it can create a "rich get richer" cycle that may consolidate power within the hands of a few large holders over time.
 
 ### Proof of History (PoH): The Solana Innovation
-Proof of History is a temporal innovation pioneered by Solana that fundamentally changes how nodes reach an agreement. 
+Proof of History is a temporal innovation pioneered by <Term id="solana">Solana</Term> that fundamentally changes how nodes reach an agreement. 
 
 In traditional consensus models, nodes must communicate back and forth to agree on the exact timing of a transaction, which creates a massive bottleneck. Proof of History solves this by creating a decentralized "cryptographic clock" using a Verifiable Delay Function (VDF). This allows the network to timestamp and sequence transactions before they even reach the consensus layer, proving that an event occurred at a specific moment in time without requiring constant communication between nodes.
 
-This architecture enables massive scalability and parallel processing, allowing Solana to handle tens of thousands of transactions per second with 400ms finality. The primary trade-off for this performance is the high hardware requirement for validators. Because the network moves at such a high frequency, it requires specialized, high-performance hardware to keep up, which can limit the number of participants capable of securing the network.
+This architecture enables massive scalability and parallel processing, allowing <Term id="solana">Solana</Term> to handle tens of thousands of transactions per second with 400ms finality. The primary trade-off for this performance is the high hardware requirement for validators. Because the network moves at such a high frequency, it requires specialized, high-performance hardware to keep up, which can limit the number of participants capable of securing the network.
