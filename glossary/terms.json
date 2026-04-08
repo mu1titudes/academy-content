@@ -52,6 +52,11 @@
     "definition": "A wallet where a third party (like an exchange) holds and manages your private keys on your behalf."
   },
   {
+    "term": "Custodian",
+    "definition": "A Custodian is an entity (like a bank or platform) that holds and secures your assets on your behalf.",
+    "author": "Matt"
+  },
+  {
     "term": "DAO",
     "definition": "Decentralized Autonomous Organization. A community-led entity governed by smart contracts and token-holder votes rather than a central authority."
   },
@@ -88,6 +93,11 @@
     "definition": "An uncollateralized loan that must be borrowed and repaid within the same transaction."
   },
   {
+    "term": "Funding Rate",
+    "definition": "A periodic fee paid between traders in perpetual futures markets to keep the contract price aligned with the spot price.",
+    "author": "Matt"
+  },
+  {
     "term": "Gas",
     "definition": "A unit measuring the computational effort required to execute transactions on a blockchain. On Solana, transaction fees are very low compared to other chains."
   },
@@ -114,6 +124,11 @@
   {
     "term": "JUP",
     "definition": "The governance token of the Jupiter ecosystem on Solana."
+  },
+  {
+    "term": "KYC/KYB",
+    "definition": "KYC/KYB (Know Your Customer/Business): A process where users must verify their identity (ID, documents) before using a financial service.",
+    "author": "Matt"
   },
   {
     "term": "Keypair",
@@ -249,7 +264,8 @@
   },
   {
     "term": "Solana",
-    "definition": "A high-performance blockchain known for fast transactions (~65,000 TPS) and low fees. Jupiter is built on Solana."
+    "definition": "Solana is a high-performance blockchain designed for fast, low-cost transactions (~65,000 TPS) and scalable decentralized applications, with Jupiter products using this blockchain as their main infrastructure.",
+    "author": "Matt"
   },
   {
     "term": "SPL Token",
