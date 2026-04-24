@@ -144,7 +144,7 @@
   },
   {
     "term": "Limit Order",
-    "definition": "An order to buy or sell an asset at a specific price or better. Jupiter supports on-chain limit orders on Solana."
+    "definition": "An order to buy or sell an asset at a specific price or better. Jupiter supports onchain limit orders on Solana."
   },
   {
     "term": "Liquidation",
@@ -199,7 +199,7 @@
     "definition": "A wallet where the user has full control of their private keys. No third party can access or freeze the funds."
   },
   {
-    "term": "On-Chain",
+    "term": "Onchain",
     "definition": "Actions or data that are recorded directly on the blockchain, making them transparent and verifiable."
   },
   {

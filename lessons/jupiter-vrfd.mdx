@@ -1,0 +1,85 @@
+---
+title: "Bringing Order to Solana's Token Layer with VRFD"
+publishedAt: '2026-04-22'
+badges:
+  - Beginner
+  - Product
+hiddenBadges:
+  - VRFD
+  - Verified
+  - Token Verification
+  - Jup Shield
+  - Community Trust
+  - Mint Verification
+---
+
+## Bringing Order to Solana's Token Layer with VRFD
+
+Nearly 40,000 new tokens are launched on Solana every single day. Without a reliable source of truth, that volume creates an opening for imposter tokens - assets that share a name, logo, or ticker with a legitimate project but lead to a completely different contract address. For years, this kind of deception caused widespread losses for traders across the ecosystem.
+
+**VRFD** (pronounced "verified") is Jupiter's answer to this problem. It is the canonical data layer for Solana tokens, built from five years of curation experience across hundreds of thousands of assets. Rather than relying on any single input, VRFD unifies three sources of truth - onchain data, AI-assisted curation, and community contribution - all reviewed by a team of humans before anything enters the verification layer.
+
+The result is a shared standard that wallets, DEXes, launchpads, and other Solana products can plug into directly, so that verified data propagates everywhere at once.
+
+### Why Open Contribution?
+
+No single team can review every token that launches on Solana at the current pace. But scalability is only part of the reason VRFD opened its contribution layer to the public.
+
+A closed verification process - one where decisions are made by a committee that the community cannot see, against standards they cannot inspect - gradually loses legitimacy. Projects begin to view it as something to game rather than something to trust. Over time, the system becomes a gatekeeping mechanism rather than a public good.
+
+Opening the contribution layer solves both problems at once. Anyone can submit a verification request, update a token's metadata, recommend relevant news, or flag inaccurate data. Every submission is attached to a public identity with a visible track record. This structure keeps the system honest: contributors who act in bad faith build a record of doing so, while those who contribute accurately build credibility over time.
+
+The closest model to this is **Wikipedia**. A commons-based system where contribution is open, standards are maintained, and the overall quality of information improves as more people participate.
+
+### Why Multiple Signals?
+
+No single data point tells you everything you need to know about a token. VRFD reflects this by combining four distinct signal types into one unified layer.
+
+- **Mint Verification** answers the foundational question: is this the correct contract address for the project it claims to represent? This is the first line of defense against imposter tokens.
+- **Jup Shield** evaluates whether a token is safe to trade by analyzing onchain risk factors - such as whether liquidity is heavily concentrated or whether the contract retains permissions that could be used against holders.
+- **Community Trust** captures the ecosystem's collective judgment. Reputation data for most projects exists informally in Telegram channels, group chats, and the minds of active participants. VRFD structures this informal knowledge into a public trust score derived from verifiable social support.
+- **News** provides real-time context: partnerships, releases, audits, and security events, filtered to be genuinely informative rather than just noisy.
+
+Together, these signals give you the full picture in one place, without having to piece it together yourself from a collection of informal inputs.
+
+### Why Human Review?
+
+Automated systems are gameable once someone figures out what they measure. A purely algorithmic verification process works reliably until it is reverse-engineered - at which point it either stops providing useful signal or fails entirely. Similarly, a fully AI-driven news feed works until it hallucinates, and once it does, it begins to erode exactly the trust it was built to create.
+
+Human review addresses this. It does not scale the same way an algorithm does, but open contribution changes the economics: when anyone can submit data, the team no longer needs to source it. The review workload stays manageable while the coverage expands.
+
+This is the same dynamic that makes Wikipedia work. The editorial team does not write every article - they maintain the standards by which a large, distributed contributor base operates.
+
+### Already Running Across Solana
+
+VRFD is not a new idea that is still being built. It has been running in production for nearly five years, powering token verification across countless wallets, DEXes, and launchpads on Solana. The infrastructure that carries verified data to those surfaces already exists.
+
+What open contribution adds is the ability to extend that same infrastructure to curated news and metadata updates. When you make a submission on VRFD, it travels through the same pipes that already distribute verification data across every product integrated with the API. One submission, reflected everywhere.
+
+### Standard Review vs. Express Review
+
+When submitting a token for verification, you choose between two review lanes.
+
+**Standard Review** is free. Because VRFD receives a high volume of submissions, the team prioritizes tokens with strong existing community support, and review timelines can vary. There is no guaranteed window.
+
+**Express Review** costs 1,000 JUP, which is burned rather than kept by the protocol. In return, you receive a guaranteed review within 24-48 hours. If your submission does not meet the criteria on the first attempt, it is automatically reconsidered every 24 hours for up to 2 days. The burn mechanism exists to reduce spam and ensure the queue is made up of legitimate requests.
+
+If you need a predictable timeline - for a product launch, a listing, or any time-sensitive situation - Express is the appropriate choice. For projects with strong organic community support and no deadline, Standard is sufficient.
+
+## How to Contribute on VRFD
+
+**Step 1: Verify a Token**
+
+Navigate to [verified.jup.ag](https://verified.jup.ag) and submit a verification request for a token you believe meets the standard. Provide the correct contract address and any supporting evidence of legitimacy.
+
+**Step 2: Update Metadata**
+
+If an indexed token has an incorrect name, logo, description, or social links, you can submit a correction directly. The update will be reviewed and, if approved, will propagate to every surface connected to the VRFD API.
+
+**Step 3: Add a Tweet**
+
+Recommend a piece of content worth including in a token's news feed. This could be a partnership announcement, a product release, or a relevant security disclosure. Submissions are filtered for quality before appearing publicly.
+
+**Step 4: Report Bad Data**
+
+If you spot inaccurate metadata or a misattributed tweet on any token's page, use the report function to flag it. Flagged data is reviewed by the human curation team before any action is taken.

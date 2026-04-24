@@ -24,7 +24,7 @@ There is a fundamental difference between how assets are managed on a Centralize
 
 Fundamentally, this is very similar to entrusting your money with a TradFi bank. This model relies on institutional trust; if the exchange fails or is hacked, your access to those assets depends entirely on the exchange’s solvency and security.
 
-In contrast, interacting with a <Term id="dex">DEX</Term> like Jupiter is a **Self-Custodial** (or non-custodial) experience. You do not deposit your funds into the exchange; instead, you connect your own wallet and interact with automated smart contracts directly. Every trade is an on-chain event where you use your private key to sign and authorize the swap. 
+In contrast, interacting with a <Term id="dex">DEX</Term> like Jupiter is a **Self-Custodial** (or non-custodial) experience. You do not deposit your funds into the exchange; instead, you connect your own wallet and interact with automated smart contracts directly. Every trade is an onchain event where you use your private key to sign and authorize the swap. 
 
 At no point does a third party take possession of your keys. This eliminates institutional counterparty risk, as you retain absolute control over your assets throughout the entire trading process. However, this also shifts the entire burden of security onto the individual; there is no customer support team to recover funds if you authorize a malicious transaction or lose your keys.
 
@@ -33,7 +33,7 @@ The security of a blockchain wallet is built on asymmetric cryptography, which u
 
 Your **Private Key** is the most critical element of the wallet, functioning as your digital signature. In the same way that a handwritten signature authorizes a check, your private key authorizes the movement of assets from your public address. 
 
-In the world of on-chain finance, the phrase "Not your keys, not your coins" is a fundamental rule: whoever holds the private key has absolute, irreversible control over the associated assets. If a private key is lost, the assets are inaccessible forever, as there is no "Forgot Password" function on a decentralized network.
+In the world of onchain finance, the phrase "Not your keys, not your coins" is a fundamental rule: whoever holds the private key has absolute, irreversible control over the associated assets. If a private key is lost, the assets are inaccessible forever, as there is no "Forgot Password" function on a decentralized network.
 
 ### The Recovery Phrase (Seed Phrase)
 Most modern wallets utilize a **Seed Phrase** (typically 12 or 24 random words) as a human-readable backup for the private key. This phrase is generated when you first create a wallet and effectively acts as a master key.
@@ -68,7 +68,7 @@ Cold wallets, or cold storage, refer to any method of storing private keys that 
 The primary advantage of cold storage is **Security**. Since the private key itself never touches an online environment, it is immune to remote digital attacks. This makes it the gold standard for long-term asset preservation. The trade-off is **Friction**: moving funds out of cold storage requires physical access to the device and a more manual process, making it less convenient for high-frequency trading or spontaneous payments.
 
 ### Jupiter Quick Accounts: The Hybrid Onboarding Path
-A common barrier to on-chain adoption is the complexity of managing a seed phrase immediately. Jupiter **Quick Accounts** solve this by utilizing a "social login" flow powered by **Privy**. This allows users to create a functional blockchain wallet using only an email address or a social account (i.e. Google, Discord, etc), removing the initial friction of traditional wallet setup while maintaining a self-custodial foundation.
+A common barrier to onchain adoption is the complexity of managing a seed phrase immediately. Jupiter **Quick Accounts** solve this by utilizing a "social login" flow powered by **Privy**. This allows users to create a functional blockchain wallet using only an email address or a social account (i.e. Google, Discord, etc), removing the initial friction of traditional wallet setup while maintaining a self-custodial foundation.
 
 Under the hood, these accounts are powered by **Multi-Party Computation (MPC)**. Instead of storing a single private key in one location, MPC splits the key into multiple "shards". One shard is stored on the user’s device, while another is managed securely by Privy and accessed via the user's social login. 
 
