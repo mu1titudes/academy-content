@@ -1,0 +1,83 @@
+---
+title: "Why Pegged Vaults Behave Differently Under Risk"
+publishedAt: '2026-04-22'
+image: ''
+badges:
+  - Intermediate
+  - Fundamentals
+hiddenBadges:
+  - Jupiter Lend
+  - Pegged Vaults
+  - Liquidation
+  - LST
+  - JupSOL
+  - LTV
+author: 'Slorg'
+---
+
+## Why Pegged Vaults Behave Differently Under Risk
+
+When a bank evaluates a mortgage application, one of the first things it considers is how the collateral behaves relative to the loan. A house in a stable neighbourhood is worth more to the bank as collateral than a house in a volatile market - not because the house is worth more today, but because the bank can be more confident its value will hold until the loan is repaid.
+
+The same logic applies in DeFi lending. Not all collateral carries the same risk profile, and not all risk behaves the same way. **Jupiter Lend's pegged vaults** are designed for a specific case where the collateral and the debt are structurally linked - which changes the risk picture in a meaningful way.
+
+### Two Different Kinds of Risk
+
+Most users think of lending risk as a single thing: a price crash, a liquidation, a loss. But the risks that can affect a lending position are not the same, and conflating them leads to poor decisions.
+
+**Price risk** is what happens when your collateral drops in value relative to your debt. As the two sides of your balance sheet diverge, your loan-to-value (LTV) ratio climbs. If the LTV crosses the liquidation threshold, the protocol closes part or all of your position. This is the dominant risk in most lending markets - and it can happen in minutes during a flash crash for a volatile pair like SOL/USDC.
+
+**Liquidity risk** is entirely different in both cause and speed. This happens when the borrow rate spikes due to high utilization - sometimes called a liquidity crunch. If the cost of borrowing an asset exceeds the collateral's yield for a sustained period, the debt grows faster than the collateral, and the LTV creeps upward. Unlike price risk, this process unfolds over weeks or months - not minutes.
+
+Understanding which type of risk applies to your position is the starting point for managing it well.
+
+### How Pegged Vaults Are Structured
+
+A pegged vault pairs a collateral asset and a debt asset that are structurally linked in value. The most common form on Jupiter Lend is a **liquid staking token (LST)** paired with the underlying asset - for example, **JupSOL as collateral against a SOL loan**.
+
+JupSOL is SOL that has been staked and is accumulating staking rewards. Its redemption rate - the onchain ratio at which JupSOL can be exchanged for SOL - only ever increases over time. It does not fall against SOL. The mechanism is structural, not market-dependent.
+
+This has a direct consequence for price risk: **a market event that would liquidate a SOL/USDC position is irrelevant to a JupSOL/SOL position**, because both sides of the balance sheet move together. If SOL drops 30%, your JupSOL collateral drops 30% in USD terms - but so does your SOL debt. The LTV is unchanged.
+
+#### How Jupiter Lend Prices Collateral
+
+LSTs can and do trade at a discount or premium on open markets. When sentiment is negative, a DEX might quote JupSOL below its actual redemption value in SOL.
+
+Jupiter Lend does not use DEX prices to value LST collateral. It uses the **on-chain redemption rate** - the actual ratio at which the protocol will exchange JupSOL for SOL. This means short-term market depegs do not affect your position. Your collateral is valued based on what it structurally *is*, not on what traders are currently willing to pay for it.
+
+### Liquidity Risk in Pegged Vaults
+
+Eliminating price risk does not mean eliminating all risk. Liquidity risk still applies to pegged vaults, and it is worth understanding how it could affect a position - and why, historically, it has not.
+
+The scenario would unfold like this: borrowing demand for SOL spikes, pushing the borrow rate up. If that rate stays above the yield on JupSOL for long enough, the interest accruing on the debt would gradually outpace the staking rewards accruing on the collateral. Over weeks or months, the LTV would drift upward toward the liquidation threshold.
+
+In practice, two self-correcting forces activate whenever rates spike:
+
+- **Borrowers respond.** As borrowing becomes more expensive, users with open positions tend to repay or reduce their debt, which lowers utilization and brings rates back down.
+- **Lenders respond.** Higher borrow rates mean higher supply yields. This attracts new deposits, which increases the available supply and brings rates back down.
+
+Historical data on Jupiter Lend shows that rate spikes have consistently resolved within hours - not days or weeks.
+
+The protocol's underlying liquidity layer reinforces this. When liquidity is fragmented across many isolated markets, a modest demand shock can spike rates sharply in a specific pool. Jupiter Lend pools liquidity across the protocol, so the same demand shock dissipates across a much larger base - making crunches both less likely and shorter-lived when they do occur.
+
+The scenario where a pegged vault liquidation becomes a realistic possibility would require borrow rates to remain elevated for weeks or months, with neither borrowers repaying nor lenders depositing during that entire window. That is a significantly more demanding condition than the minutes-long flash crash that can liquidate a volatile pair.
+
+### If a Liquidation Did Occur
+
+Even in the unlikely event that a pegged vault position crossed the liquidation threshold, the consequences would be meaningfully different from what most users have experienced on other protocols.
+
+Many lending protocols liquidate a fixed percentage of a position once it crosses the threshold - often 50% or more - and charge the penalty on the entire position. The practical result is that a single breach can cause losses far larger than the technical shortfall.
+
+Jupiter Lend's liquidation engine works differently:
+
+- Only enough of the position is closed to bring the LTV back to health - no fixed percentage, and never more than necessary
+- The liquidation penalty is **as low as 0.1%**
+- That penalty is applied only to the **portion that is liquidated**, not to the whole position
+
+The effect is that users who do experience a liquidation suffer losses calibrated to the actual problem - not to the mechanics of a blunt liquidation engine. A small LTV breach leads to a small, targeted close.
+
+### Putting It Together
+
+Pegged vaults are not risk-free. But they carry a fundamentally different risk profile than volatile-pair positions. Price risk - the fastest and most common cause of DeFi liquidations - is structurally absent because the collateral and debt move together. Liquidity risk exists but moves slowly, is self-correcting, and in Jupiter Lend's design, is further dampened by pooled liquidity.
+
+For users who understand this distinction, pegged vaults offer a way to access liquidity against yield-bearing collateral with significantly reduced exposure to the sudden liquidations that define the experience of borrowing against volatile pairs.

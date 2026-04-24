@@ -1,0 +1,177 @@
+---
+title: "Using Offerbook As A Lender"
+publishedAt: '2026-04-13'
+badges:
+  - Advanced
+  - Product
+hiddenBadges:
+  - Offerbook
+  - Borrow
+  - Lend
+  - Fixed Term
+  - Offer
+  - Loan
+---
+
+## Using Offerbook As A Lender
+
+As a Lender, you will be able to lend out USDC against onchain assets as collateral via Offerbook, a peer-to-peer money market on Solana.
+
+Every loan has a known duration, a known return, a known outcome at maturity, with no price-based liquidations.
+
+![Offerbook Header](https://static.academy.jup.ag/images/illustrations/offerbook_header.png)
+
+### Why Lend on Offerbook?
+
+* **Predictable Loan Terms**. All Offerbook loans are well-defined, with a fixed duration, a known return rate, and a clear outcome at maturity. Lenders can manage their positions with greater certainty and better anticipate their returns compared to variable-rate models.
+* **Collateral Diversity**. With more than 4,000 tokens available as collateral (vs. a few hundred in other classic lending protocols), Offerbook provides significantly broader asset diversity and more yield opportunities for lenders.
+
+### The Escrow Wallet
+
+To support the Offerbook protocol, an escrow wallet is set up, and is visible in the top right corner of the main page. The escrow wallet acts as an intermediary holding space, where lenders can deposit and withdraw USDC at any time into the escrow. 
+
+![Offerbook Escrow Wallet](https://static.academy.jup.ag/images/illustrations/offerbook_escrow_wallet.gif)
+
+Thanks to the escrow wallet, lenders can create multiple offers using the same USDC balance, for more flexibility and capital-efficient lending strategies. 
+
+When an offer is accepted, the USDC leaves the escrow, and any outstanding offers that are no longer covered by the remaining balance will be put on hold (and hidden from public view) until sufficient USDC is again available in the escrow.
+
+---
+
+### How To Use Offerbook As A Lender
+
+There are 2 main ways to use Offerbook as a Lender. Either: 
+1. Create a new lend offer with custom terms, or
+2. Accept an existing borrow offer
+
+### Creating An New Lend Offer
+
+**Step 1: Create a New Lend Offer**
+
+Navigate to the official Jupiter Offerbook website, and select “Supply” at the top of the page, and select “Offer to lend” to start the process of creating your own Lend Offer.
+
+**Step 2: Provide the Value of the Offer**
+
+Set the USDC amount that you wish to lend out. Choose your desired collateral asset and associated amount (or LTV - they update together). The Loan-to-Value (LTV) is the ratio between the borrowed USDC amount and the value of the collateral. Note that for adequate risk management, the LTV must be set within the limits stated on the page.
+
+![Offerbook Lend Step 2](https://static.academy.jup.ag/images/illustrations/offerborrow_lend_step2.png)
+
+**Step 3: Set Up Your Desired APY & Fill Amount**
+
+Provide your desired Annual Percentage Yield (APY), which will determine the interest amount to be repaid at maturity based on the USDC amount you lend. You may also tweak the minimum fill amount (the minimum percentage a borrower can accept your offer terms).
+
+![Offerbook Lend Step 3](https://static.academy.jup.ag/images/illustrations/offerborrow_lend_step3.png)
+
+![Offerbook Lend Step 4](https://static.academy.jup.ag/images/illustrations/offerborrow_lend_step4.png)
+
+**Step 4: Review & Create Your Lend Offer**
+
+Review the offer terms, such as 
+- the collateral asset and amount
+- the loaned USDC, and associated Loan-to-Value (LTV)
+- the Annual Percentage Yield (APY)
+
+Once confirmed, click “Create Offer”
+
+Your offer is now live in the offerbook for 24 hours. You may choose to set up multiple lending offers using the same USDC balance in your escrow wallet (found in the top right hand corner of the page). This allows you to reuse your available balance efficiently without needing to deposit funds multiple times
+
+Once a borrower accepts it - in full or partially - the loan starts immediately. Your USDC will be transferred to the borrower, and the collateral will be locked in a smart contract for the loan duration.
+
+Any other outstanding offers may be put on pause until sufficient USDC is available in your escrow wallet.
+
+**Step 5: Collect at Loan Maturity**
+
+Monitor your loan from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard.
+
+If the borrower repays at any time during the loan duration, you receive your USDC plus interest (minus the protocol fee). You will receive the agreed-upon amount even on early repayment.
+
+If they do not repay before maturity, you must **manually claim the collateral** (minus the protocol fee) from the dashboard. The borrower can still repay after maturity until you claim it.
+
+### Accepting An Existing Borrow Offer
+
+**Step 1: Browse Through the Existing Offers**
+
+Navigate to the official Jupiter Offerbook website, and select “Supply” at the top of the page to view the existing list of offers from borrowers. You may also use the filter to select the collateral you want. These offers will exist for up to 7 days before expiring.
+
+**Step 2: Review an Offer and its Custom Terms**
+
+Once you find an offer that you might prefer, click on the “Lend” button on the right side to open up the offer details page.
+
+Review the offer terms, such as 
+- the collateral asset and amount
+- the loaned USDC, and associated Loan-to-Value (LTV)
+- the Annual Percentage Yield (APY)
+
+You may also choose to lend a percentage (i.e. 50%) of the offered amount, instead of 100%, if the offer has partial fill enabled.
+
+At the bottom, you will find the **calculated repayment value** that you will receive at the end of the loan duration (fixed at 3 days).
+
+**Step 3: Accept the Offer and Commence the Loan**
+
+After accepting the offer, the loan starts immediately. Your USDC will be transferred to the borrower, and the collateral will be locked in a smart contract for the loan duration.
+
+**Step 4: Collect at Loan Maturity**
+
+Monitor your loan from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard.
+
+If the borrower repays at any time during the loan duration, you receive your USDC plus interest (minus the protocol fee). You will receive the agreed-upon amount regardless of when the repayment happens.
+
+If they do not repay before maturity, you must **manually claim the collateral** (minus the protocol fee) from the dashboard. The borrower can still repay after maturity until you claim it.
+
+---
+
+### Real Example: Lending with Offerbook
+
+_Note: During the private beta, loan durations are fixed at 3 days._
+
+Marc holds $50,000 USDC and is looking for better yield opportunities than the typical lending pool protocols, which typically offer 5 - 10% APY. He is willing to take on more risk by lending against more volatile assets, as he knows how to assess downside risk (max drawdown), evaluate liquidity, and select assets carefully.
+
+He plans to deploy capital between 2 types of assets:
+* Tokenized stocks & commodities
+* More volatile assets like memecoins
+
+**Step 1: Define Lending Strategy & Create Offers**
+
+Marc decides to split his lending strategy into two parts:
+* $50,000 allocated to tokenized stocks and commodities, targeting steady yield with monthly loan management
+* $25,000 allocated to more volatile assets like memecoins (Fartcoin, PENGU, BONK, etc.)
+
+He then creates multiple lending offers with different risk profiles:
+* Tokenized stocks & commodities -
+  * Lend: $50,000 USDC
+  * Duration: 30 days
+  * Average LTV: 60%
+  * APY: 12%
+  * Targeted Assets: CRCLx, TSLAx, SPYx, GOLD, etc.
+* Pre-IPO stocks -
+  * Lend: $50,000 USDC
+  * Duration: 30 days
+  * Average LTV: 50%
+  * APY: 30%
+  * Targeted Assets: SpaceX, Anthropic, OpenAI, Polymarket
+* Memecoins
+  * Lend: $25,000 USDC
+  * Duration: 10 days
+  * Average LTV: 30%
+  * APY: 40%
+  * Targeted Assets: PENGU, BONK, Fartcoin
+
+Marc carefully manages the LTV and duration for each asset category. Since Offerbook has no price-based liquidations, he estimates the potential maximum drawdown of each asset over the loan period to avoid ending up with collateral worth less than the amount he lent.
+
+As the funds are deposited into his escrow wallet, Marc can list multiple lending offers for his 50,000 USDC The offers are filled on a first-come-first-serve basis, and will use up the available liquidity. Once there is no more liquidity in his escrow wallet, the remaining offers will become inactive & delisted until funds are freed (via repayments) or when Marc adds more USDC to his escrow.
+
+He reviews all parameters and publishes his all offers on Offerbook. Loan offers have a 1-day expiration, which he can renew daily if they are not filled.
+
+**Step 2:  Borrowers Fill the Offers**
+
+Borrowers browse the available offers and accept those that match their needs. The loan starts immediately, Marc’s USDC is transferred to the borrowers, and the collateral is locked in a smart contract until full repayment (principal + interest) at maturity.
+
+When a loan starts, due to the fixed loan terms Marc knows exactly how much he will earn, as the full interest amount is owed regardless of whether the borrower repays early.
+
+For example, if a single borrower takes the full $50,000 USDC offer using SpaceX tokens as collateral at a 30% APR, Marc would receive approximately $1,250 in interest for a one-month loan.
+
+**Step 3: The Loan Maturity Date Passes**
+
+Once the borrower repays, Marc receives his USDC + interest back in his escrow wallet. If there’s enough funds in his escrow wallet, his other offers become active again. Alternatively, Marc can create new offers if he doesn’t have any active ones.
+
+If a borrower fails to repay by the maturity date for any reason, Marc becomes eligible to manually claim the collateral used to secure the loan. Note that if Marc is slow to claim the collateral, the borrower can still repay the loan until the claim actually happens. The value of this collateral may also be higher or lower than the amount lent, depending on its price movement during the loan period. 

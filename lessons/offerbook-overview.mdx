@@ -1,0 +1,118 @@
+---
+title: "Borrow Against Anything Onchain with Jupiter Offerbook"
+publishedAt: '2026-04-09'
+badges:
+  - Advanced
+  - Product
+hiddenBadges:
+  - Offerbook
+  - Borrow
+  - Lend
+  - Fixed Term
+  - Offer
+  - Loan
+---
+
+## Borrow Against Anything Onchain with Jupiter Offerbook
+
+In traditional finance, a private credit agreement between two parties -  a pawnshop loan or a bilateral business loan - works by fixing every condition upfront. Both sides agree on the collateral, the rate, and the duration before anything is signed. Once the terms are set, nothing changes until maturity. There are no surprise margin calls, no mid-loan adjustments, and no ambiguity about the outcome.
+
+Jupiter Offerbook brings this model onchain. It is a permissionless, peer-to-peer money market where borrowers and lenders set their own terms, match with each other directly, and operate within a fully fixed loan structure from start to finish.
+
+![Jupiter Offerbook](https://static.academy.jup.ag/images/illustrations/offerbook_header.gif)
+
+### What Is Jupiter Offerbook?
+
+Offerbook is a peer-to-peer credit market built on Solana, where users borrow and lend USDC against onchain assets at fixed rates, for a fixed duration, with no price-based liquidations.
+
+Unlike traditional money markets - including [Jupiter Borrow](/lessons/jupiter-borrow) - Offerbook does not rely on real-time market pricing or continuous collateral monitoring. Risk is not managed by tracking the price of your collateral in real time. Instead, it is managed by time: every loan has a known duration, a known rate, and a known outcome at maturity. Both sides of the trade define their terms, publish an offer, and wait for a match. Once matched, nothing changes until the loan ends.
+
+At this point, Offerbook supports any Solana asset that’s Jupiter Verified, and RWAs (such as xStocks)
+
+
+### Fixed-Term Loans & Key Terms
+
+Every loan on Offerbook is built around five parameters. Understanding how they interact is the foundation for building any strategy on the platform.
+
+- **Collateral:** The onchain asset locked by the borrower for the duration of the loan. Any verified token on Solana can serve as collateral. If the loan is not repaid by maturity, the lender becomes eligible to claim the collateral - but the borrower can still repay until the lender claims it.
+- **LTV (Loan-to-Value):** The ratio between the borrowed USDC amount and the value of the collateral. For example, locking $1,000 of SOL and borrowing 700 USDC sets an LTV of 70%. The borrowed amount and LTV are linked - adjusting one automatically updates the other.
+- **APR / APY:** The APR (Annual Percentage Rate) is the annualized cost of borrowing, set by the borrower or by the lender when creating an offer. The APY (Annual Percentage Yield) is the annualized return rate for the lender. Both are fully defined by the user, market-driven, and fixed for the entire duration of the loan.
+- **Loan Duration:** The fixed loan period during which the collateral is locked and the loan is active. The duration cannot be changed once the loan starts, and the loan must be repaid before maturity. At maturity, the loan becomes claimable by the lender. The borrower can still repay after maturity as long as the lender has not yet claimed the collateral. Once the lender claims, the collateral is transferred in full, regardless of its current market value.
+- **Loan Expiration:** Represents the time period during which a loan offer is available to be filled. If an offer reaches its expiration date without being filled, the offer is delisted and the offer creator must renew or cancel it.
+
+![Loan Details](https://static.academy.jup.ag/images/illustrations/offerbook_loan_details.png)
+
+---
+
+### The Loan Lifecycle
+
+A loan on Offerbook follows a simple, linear path with no moving parts once it begins.
+
+1. **Create an offer.** Either a borrower or a lender can publish an offer with their desired terms. All offers have an expiration date, currently fixed at 1 day for lending offers and up to 7 days for borrowing offers. Since Offerbook does not rely on a price oracle, this expiration mechanism is necessary to allow offers to adapt to changing market conditions and collateral price fluctuations.
+
+2. **Get matched.** Another user accepts the offer, either in full or partially. Partial acceptance is available for all offers except those using NFT collateral, since an NFT cannot be partially transferred. Each loan offer can be shared directly via a link. You can send it to someone to match your terms or share it on social media.
+
+3. **The loan runs.** The moment an offer is accepted, the loan starts. Collateral is locked in a smart contract, USDC is transferred, and all terms are fixed and immutable. No margin calls, no price monitoring, no changes of any kind can occur during the loan.
+
+4. **Repay or collateral claim.** The borrower can repay at any point to reclaim their collateral in full. After maturity, the lender becomes eligible to manually claim the collateral - but the borrower can still repay until the lender does so. Once the lender claims, the transfer is final.
+
+![Offerbook's Loan Cycle](https://static.academy.jup.ag/images/illustrations/offerbook_loan_cycle.png)
+
+### Fees, Explained Simply
+
+- When the loan is first filled, a **25% fee on the interest** is charged to the borrower. 
+- When the loan is repaid, a **10% fee on the interest** is charged to the lenders.This fee is taken from the interest amount, not the principal. 
+- In the event of a default, a **0.1% fee of the collateral** is charged during the collateral transfer.
+
+![Offerbook Fees](https://static.academy.jup.ag/images/illustrations/offerbook_fees_explained)
+
+At each of these moments, if a platform fee is charged, that fee can be split into referral rewards. By default, the fee is divided like this:
+- 20% goes to the referred user
+- 30% goes to the referrer side
+- 50% stays with the protocol
+
+---
+
+### A Real Example
+
+A borrower holds a tokenized asset valued at approximately $10,000. The asset has limited onchain liquidity, making it difficult to sell quickly without significant price impact. Rather than attempting to sell, the borrower can access USDC for 3 days by leveraging their tokenized asset in an offer.
+
+**They create an Offerbook offer with the following terms:**
+
+| Parameter | Value |
+|---|---|
+| Collateral | Tokenized assets (~$10,000) |
+| Borrowed asset | 8,000 USDC |
+| LTV | 80% |
+| Loan duration | 3 days |
+| Fixed APR | 35% |
+
+A lender reviews the offer and accepts it in full. The loan starts immediately - collateral is now locked, and 8,000 USDC is transferred from the lender to the borrower.
+
+**At maturity, the borrower repays:**
+
+| Detail | Amount |
+|---|---|
+| Interest owed (35% APR × 3 days) | ~$23.01 |
+| Protocol fee charge to the borrower (25% of interest) | ~$5.75 |
+| Protocol fee charge to the lender (10% of the interest) | ~$2.30 |
+| Interest received by lender | ~$20.709 |
+| Collateral returned | Full tokenized assets |
+
+Throughout the entire loan period, no price-based liquidation could occur - regardless of how the market price has moved. The borrower gains their liquidity freely, and the lender earns a known, fixed return.
+
+**If the borrower had not repaid before maturity:** the lender becomes eligible to claim the collateral. The borrower can still repay after maturity, as long as the lender has not yet claimed. Once claimed, the entire collateral is transferred to the lender with a 0.1% fee deducted at the point of transfer.
+
+---
+
+### Risks & What to Keep in Mind
+
+Offerbook removes certain risks that exist in traditional money markets - but it does not remove all risk. Understanding the trade-off is essential before using the platform. For starters, Offerbook has been audited by Spearbit.
+
+**For borrowers:** 
+* Because there are no margin calls or liquidations during the loan, it is easy to lose track of when repayment is due. After maturity, the lender can claim the collateral at any time. The borrower can still repay after maturity as long as the lender has not yet claimed - but there are no reminders or guarantees the lender will wait. Repayment timing is entirely the borrower's responsibility.
+* Additionally, the full interest for the agreed loan amount is owed regardless of when early repayment occurs - there is no pro-rated discount for repaying ahead of schedule.
+
+**For lenders:** 
+* Collateral value is not monitored during the loan. If the collateral asset loses significant value between the start of the loan and maturity, the lender may be forced to claim an asset worth less than the USDC they provided. The higher the LTV, the greater this exposure.
+* When evaluating an offer, lenders should consider the liquidity of the collateral, its volatility over the loan period, and how comfortable they would be holding that asset outright at maturity.

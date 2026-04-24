@@ -1,0 +1,167 @@
+---
+title: "Using Offerbook As A Borrower"
+publishedAt: '2026-04-13'
+badges:
+  - Advanced
+  - Product
+hiddenBadges:
+  - Offerbook
+  - Borrow
+  - Lend
+  - Fixed Term
+  - Offer
+  - Loan
+---
+
+## Using Offerbook As A Borrower
+
+As a borrower, you will be able to borrow USDC using onchain assets as collateral via Offerbook, a peer-to-peer money market on Solana.
+
+Every loan has a known duration, a known return, a known outcome at maturity, with no price-based liquidations.
+
+### Why Borrow on Offerbook?
+
+* **Predictable Loan Terms**. All Offerbook loans are well-defined with a fixed loan duration, a known return rate, and a clear outcome at maturity.
+* **No Price-Based Liquidations**. Risk in Offerbook is managed by duration, not by price fluctuations. There is no chance of losing the collateral due to sudden price changes.
+* **Illiquid Onchain Assets**. High-value assets with low onchain liquidity, such as Real World Assets (RWAs) can be used as collateral without price-based liquidation or risk of price manipulation.
+
+Offerbook is the ideal solution for anyone to borrow against any asset, without needing to manage positions to avoid liquidation. Define your terms, borrow, and repay on time using any kind of collateral.
+
+![Offerbook Header](https://static.academy.jup.ag/images/illustrations/offerbook_header.png)
+
+Some of the examples of collaterals that can be used in Offerbook include:
+* **Any tokens verified** on Solana via VRFD (Verification Standard for Solana tokens)
+* **RWAs**: tokenized equities, commodities, debt products, etc.
+* **NFTs**: onchain collectibles, including tokenized collectibles such as TCG (Pokémon, Baseball etc.)
+* **Tokenized physical assets**: art, watches, etc.
+Any asset available on Solana that is transferable can be used as collateral to borrow liquidity.
+
+---
+
+### Ways to Use Offerbook As A Borrower
+
+There are 2 main ways to use Offerbook as a Borrower. Either: 
+1. Accept an existing lend offer, or
+2. Create a new borrow offer with custom terms
+
+### Accepting An Existing Lend Offer
+
+**Step 1: Browse Through the Existing Offers**
+
+Navigate to the official Jupiter Offerbook website, and select “Borrow” at the top of the page to view the existing list of offers from lenders. You may also use the filter to select the collateral you are willing to lock. These offers will exist for 24 hrs before expiring.
+
+**Step 2: Review an Offer and its Custom Terms**
+
+Once you find an offer that you might prefer, click on the “Borrow” button on the right side to open up the offer details page.
+
+Review the offer terms, such as 
+- the collateral asset and max amount
+- the loaned USDC, and associated Loan-to-Value (LTV)
+- the Annual Percentage Rate (APR)
+
+You may also choose to borrow a percentage (i.e. 50%) of the offered amount, instead of 100%, if the offer has partial fill enabled.
+
+At the bottom, you will find the **calculated repayment value** that you will repay at the end of the loan duration (fixed at 3 days).
+
+![Loan Details](https://static.academy.jup.ag/images/illustrations/offerbook_loan_details.png)
+
+**Step 3: Accept the Offer and Commence the Loan**
+
+After accepting the offer, the loan starts immediately. You will receive the USDC (minus the protocol fee), and your collateral will be locked.
+
+**Step 4: Repay Before Maturity**
+
+Monitor your loan's maturity date from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard.
+
+Repay at any time before maturity to reclaim your collateral in full. Remember: the full interest for the agreed duration is owed, even on early repayment.
+
+If the maturity date has passed and the loan has not been fully paid off, the lender becomes eligible to manually claim the collateral for themselves - but the borrower can still repay until the lender does so. Once the lender claims, the transfer is final.
+
+
+### Creating An New Borrow Offer
+
+**Step 1: Create a New Borrow Offer**
+
+Navigate to the official Jupiter Offerbook website, and select “Borrow” at the top of the page, and select “Ask for a loan” to start the process of creating your own Borrow Offer.
+
+**Step 2: Provide the Value of the Offer**
+
+Choose your collateral asset and amount that will be locked for the duration of the loan. Set your desired USDC amount (or LTV - they update together). The Loan-to-Value (LTV) is the ratio between the borrowed USDC amount and the value of the collateral. Note that for adequate risk management, the LTV must be set within the limits stated on the page.
+
+![Offerbook Borrow Step 2](https://static.academy.jup.ag/images/illustrations/offerborrow_borrow_step2.png)
+
+**Step 3: Set Up Your Desired APR & Fill Amount**
+
+Provide your desired Annual Percentage Rate (APR), which will determine the interest amount to be repaid at maturity, as well as your loan duration that determines when your loan repayment is due. You may also tweak the expiry time (how long until the offer is available before it expires), and the minimum fill amount (the minimum percentage a lender can accept your offer terms).
+
+Note that the expiry time does NOT affect the loan duration.
+
+![Offerbook Borrow Step 3](https://static.academy.jup.ag/images/illustrations/offerborrow_borrow_step3.png)
+
+![Offerbook Borrow Step 4](https://static.academy.jup.ag/images/illustrations/offerborrow_borrow_step4.png)
+
+**Step 4: Review & Create Your Borrow Offer**
+
+Review the offer terms, such as 
+- the collateral asset and amount
+- the loaned USDC, and associated Loan-to-Value (LTV)
+- the Annual Percentage Rate (APR)
+
+Once confirmed, click “Create Offer”
+
+Your offer is now live in the offerbook for up to 7 days. Once a lender accepts it - in full or partially - the loan starts immediately. You will receive USDC (minus the protocol fee) and your collateral will be locked.
+
+**Step 5: Repay Before Maturity**
+
+Monitor your loan's maturity date from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard.
+
+Repay at any time before maturity to reclaim your collateral in full. Remember: the full interest for the agreed duration is owed, even on early repayment.
+
+If the maturity date has passed and the loan has not been fully paid off, the lender becomes eligible to manually claim the collateral for themselves - but the borrower can still repay until the lender does so. Once the lender claims, the transfer is final.
+
+---
+
+### Real Example: Borrowing with Offerbook
+
+_Note: During the private beta, loan durations are fixed at 3 days._
+
+Marc holds $5,000 worth of tokenized stocks in his wallet. He doesn’t want to sell them just yet, as he believes in their long-term value. But he **needs $1,000 in cash quickly** to book a flight to Solana Breakpoint before prices go up. He knows he’ll be able to repay the loan in 1 month, once he receives his salary.
+
+**Step 1: Use Assets as Collateral to Borrow Liquidity with Fixed Terms**  
+
+Instead of selling his assets, Marc plans to use them as collateral on Offerbook to secure the loan. He has two options:
+* Accept an existing lend offer (fastest option)
+* Or create his own borrow offer with custom terms
+
+He decides to create his own offer, as none of the existing ones meet his requirements:
+* Collateral: $2,000 worth of tokenized stocks, locked as collateral
+* Borrowed amount: $1,000 USDC to pay his flight
+* Duration: 30 days, as he expects to be paid within that time and repay the loan
+* Annualized Percentage Rate (APR): 20%. Marc is willing to pay this rate, which represents ~$17 in interest for one month. He knows the flight will be a few hundred dollars more expensive next month, so he wants to secure a lender quickly.
+
+He reviews and confirms all the parameters, and his offer is now live on the Offerbook.
+
+**Step 2: The Borrow Offer Gets Filled**
+
+A lender sees Marc’s offer and accepts it. A few things happen immediately:
+* The loan starts immediately
+* Marc instantly receives $1,000 USDC from the lender
+* His collateral is also now locked in a smart contract
+He can now book his flight using his Jupiter Card, without selling any of his assets.
+
+**Step 3: No Liquidation, No Stress**
+
+During the loan, Marc isn’t stressed about liquidation, even if the price of his collateral drops. This is because there is **no price-based liquidation on Offerbook**.
+He doesn’t need to monitor the position and simply waits until the repayment date, which he has set in his calendar.
+
+**Step 5: Repay & Recover Collateral**
+
+After 30 days, Marc comes back to repay his loan: $1,000 in principal, $21 in interest, including protocol fees.
+He receives his collateral back in full, which just so happened to have increased in value over the month.
+Meanwhile, Marc checks the price of his flight to Solana Breakpoint, it has increased by more than $100 during that time.
+His decision turned out to be the right one: Marc recovered his collateral, repaid his debt, and saved a hundred dollars by holding his assets and booking his flight early.
+
+**What If Marc Doesn’t Repay On Time?**
+
+If Marc misses his repayment before the maturity date, the lender becomes eligible to claim the collateral.
+Marc can still repay his loan until the lender manually claims the collateral. However, once the claim happens, the transfer is final and Marc loses his collateral.
