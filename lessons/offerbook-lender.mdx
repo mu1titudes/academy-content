@@ -15,7 +15,7 @@ hiddenBadges:
 
 ## Using Offerbook As A Lender
 
-As a Lender, you will be able to lend out USDC against onchain assets as collateral via Offerbook, a peer-to-peer money market on Solana.
+As a Lender, you will be able to lend out USDC against onchain assets as collateral via Offerbook, a peer-to-peer money market on <Term id="solana">Solana</Term>.
 
 Every loan has a known duration, a known return, a known outcome at maturity, with no price-based liquidations.
 
@@ -52,13 +52,13 @@ Navigate to the official Jupiter Offerbook website, and select “Supply” at t
 
 **Step 2: Provide the Value of the Offer**
 
-Set the USDC amount that you wish to lend out. Choose your desired collateral asset and associated amount (or LTV - they update together). The Loan-to-Value (LTV) is the ratio between the borrowed USDC amount and the value of the collateral. Note that for adequate risk management, the LTV must be set within the limits stated on the page.
+Set the USDC amount that you wish to lend out. Choose your desired collateral asset and associated amount (or <Term id="ltv">LTV</Term> - they update together). The Loan-to-Value (LTV) is the ratio between the borrowed USDC amount and the value of the collateral. Note that for adequate risk management, the <Term id="ltv">LTV</Term> must be set within the limits stated on the page.
 
 ![Offerbook Lend Step 2](https://static.academy.jup.ag/images/illustrations/offerborrow_lend_step2.png)
 
-**Step 3: Set Up Your Desired APY & Fill Amount**
+**Step 3: Set Up Your Desired <Term id="apy">APY</Term> & Fill Amount**
 
-Provide your desired Annual Percentage Yield (APY), which will determine the interest amount to be repaid at maturity based on the USDC amount you lend. You may also tweak the minimum fill amount (the minimum percentage a borrower can accept your offer terms).
+Provide your desired Annual Percentage <Term id="yield">Yield</Term> (APY), which will determine the interest amount to be repaid at maturity based on the USDC amount you lend. You may also tweak the minimum fill amount (the minimum percentage a borrower can accept your offer terms).
 
 ![Offerbook Lend Step 3](https://static.academy.jup.ag/images/illustrations/offerborrow_lend_step3.png)
 
@@ -69,7 +69,7 @@ Provide your desired Annual Percentage Yield (APY), which will determine the int
 Review the offer terms, such as 
 - the collateral asset and amount
 - the loaned USDC, and associated Loan-to-Value (LTV)
-- the Annual Percentage Yield (APY)
+- the Annual Percentage <Term id="yield">Yield</Term> (APY)
 
 Once confirmed, click “Create Offer”
 
@@ -100,7 +100,7 @@ Once you find an offer that you might prefer, click on the “Lend” button on 
 Review the offer terms, such as 
 - the collateral asset and amount
 - the loaned USDC, and associated Loan-to-Value (LTV)
-- the Annual Percentage Yield (APY)
+- the Annual Percentage <Term id="yield">Yield</Term> (APY)
 
 You may also choose to lend a percentage (i.e. 50%) of the offered amount, instead of 100%, if the offer has partial fill enabled.
 
@@ -124,7 +124,7 @@ If they do not repay before maturity, you must **manually claim the collateral**
 
 _Note: During the private beta, loan durations are fixed at 3 days._
 
-Marc holds $50,000 USDC and is looking for better yield opportunities than the typical lending pool protocols, which typically offer 5 - 10% APY. He is willing to take on more risk by lending against more volatile assets, as he knows how to assess downside risk (max drawdown), evaluate liquidity, and select assets carefully.
+Marc holds $50,000 USDC and is looking for better yield opportunities than the typical lending pool protocols, which typically offer 5 - 10% <Term id="apy">APY</Term>. He is willing to take on more risk by lending against more volatile assets, as he knows how to assess downside risk (max drawdown), evaluate liquidity, and select assets carefully.
 
 He plans to deploy capital between 2 types of assets:
 * Tokenized stocks & commodities
@@ -158,7 +158,7 @@ He creates multiple lending offers with different risk profiles:
   * APY: 40%
   * Targeted Assets: PENGU, BONK, Fartcoin
 
-Marc carefully manages the LTV and duration for each asset category. Since Offerbook has no price-based liquidations, he estimates the potential maximum drawdown of each asset over the loan period to avoid ending up with collateral worth less than the amount he lent.
+Marc carefully manages the <Term id="ltv">LTV</Term> and duration for each asset category. Since Offerbook has no price-based liquidations, he estimates the potential maximum drawdown of each asset over the loan period to avoid ending up with collateral worth less than the amount he lent.
 
 As the funds are deposited into his escrow wallet, Marc can list multiple lending offers for his 50,000 USDC. The offers are filled on a first-come-first-serve basis, and will use up the available liquidity. Once there is no more liquidity in his escrow wallet, the remaining offers will become inactive & delisted until funds are freed (via repayments) or when Marc adds more USDC to his escrow.
 
