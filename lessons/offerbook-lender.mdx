@@ -44,7 +44,7 @@ There are 2 main ways to use Offerbook as a Lender. Either:
 1. Create a new lend offer with custom terms, or
 2. Accept an existing borrow offer
 
-### Creating An New Lend Offer
+### Creating A New Lend Offer
 
 **Step 1: Create a New Lend Offer**
 
@@ -136,7 +136,9 @@ Marc decides to split his lending strategy into two parts:
 * $50,000 allocated to tokenized stocks and commodities, targeting steady yield with monthly loan management
 * $25,000 allocated to more volatile assets like memecoins (Fartcoin, PENGU, BONK, etc.)
 
-He then creates multiple lending offers with different risk profiles:
+*Since all offers draw from the same escrow wallet, Marc can list more than his $50,000 balance — unfilled offers automatically pause once his liquidity is used up.*
+
+He creates multiple lending offers with different risk profiles:
 * Tokenized stocks & commodities -
   * Lend: $50,000 USDC
   * Duration: 30 days
@@ -158,11 +160,11 @@ He then creates multiple lending offers with different risk profiles:
 
 Marc carefully manages the LTV and duration for each asset category. Since Offerbook has no price-based liquidations, he estimates the potential maximum drawdown of each asset over the loan period to avoid ending up with collateral worth less than the amount he lent.
 
-As the funds are deposited into his escrow wallet, Marc can list multiple lending offers for his 50,000 USDC The offers are filled on a first-come-first-serve basis, and will use up the available liquidity. Once there is no more liquidity in his escrow wallet, the remaining offers will become inactive & delisted until funds are freed (via repayments) or when Marc adds more USDC to his escrow.
+As the funds are deposited into his escrow wallet, Marc can list multiple lending offers for his 50,000 USDC. The offers are filled on a first-come-first-serve basis, and will use up the available liquidity. Once there is no more liquidity in his escrow wallet, the remaining offers will become inactive & delisted until funds are freed (via repayments) or when Marc adds more USDC to his escrow.
 
-He reviews all parameters and publishes his all offers on Offerbook. Loan offers have a 1-day expiration, which he can renew daily if they are not filled.
+He reviews all parameters and publishes all his offers on Offerbook. Loan offers have a 1-day expiration, which he can renew daily if they are not filled.
 
-**Step 2:  Borrowers Fill the Offers**
+**Step 2: Borrowers Fill the Offers**
 
 Borrowers browse the available offers and accept those that match their needs. The loan starts immediately, Marc’s USDC is transferred to the borrowers, and the collateral is locked in a smart contract until full repayment (principal + interest) at maturity.
 
