@@ -36,6 +36,18 @@ Thanks to the escrow wallet, lenders can create multiple offers using the same U
 
 When an offer is accepted, the USDC leaves the escrow, and any outstanding offers that are no longer covered by the remaining balance will be put on hold (and hidden from public view) until sufficient USDC is again available in the escrow.
 
+### Get Notified About Your Loans
+
+Offerbook supports Telegram notifications to keep you updated on key events without needing to check the dashboard manually. To connect, navigate to Settings and link your Telegram account.
+
+Then, head to the Notifications section. As a lender, you can be notified about the following:
+- **Offer accepted** - a borrower has filled your lend offer and the loan has started
+- **Offer expired** - your lend offer expired without being filled
+- **Loan due soon** - your loan is approaching its maturity date
+- **Loan repaid** - a borrower has fully repaid one of your loans
+- **Loan expired** - a loan has passed its due date without repayment; you can now manually claim the collateral
+- **Loan defaulted** - collateral has been claimed on a defaulted loan
+
 ---
 
 ### How To Use Offerbook As A Lender
@@ -75,13 +87,13 @@ Once confirmed, click “Create Offer”
 
 Your offer is now live in the offerbook for 24 hours. You may choose to set up multiple lending offers using the same USDC balance in your escrow wallet (found in the top right hand corner of the page). This allows you to reuse your available balance efficiently without needing to deposit funds multiple times
 
-Once a borrower accepts it - in full or partially - the loan starts immediately. Your USDC will be transferred to the borrower, and the collateral will be locked in a smart contract for the loan duration.
+Once a borrower accepts it - in full or partially - the loan starts immediately. Your USDC will be transferred to the borrower, and the collateral will be locked in a smart contract for the loan duration. You can be notified when your offers are accepted if you've connected to Telegram in the Settings.
 
 Any other outstanding offers may be put on pause until sufficient USDC is available in your escrow wallet.
 
 **Step 5: Collect at Loan Maturity**
 
-Monitor your loan from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard.
+Monitor your loan from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard. If you've connected to Telegram in the Settings, you can receive notifications with the Loan Repaid alert and the Loan Expired alert.
 
 If the borrower repays at any time during the loan duration, you receive your USDC plus interest (minus the protocol fee). You will receive the agreed-upon amount even on early repayment.
 
@@ -112,7 +124,7 @@ After accepting the offer, the loan starts immediately. Your USDC will be transf
 
 **Step 4: Collect at Loan Maturity**
 
-Monitor your loan from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard.
+Monitor your loan from your Positions dashboard. You may also choose to set up a calendar reminder from the dashboard. If you've connected to Telegram in the Settings, you can receive notifications with the Loan Repaid alert and the Loan Expired alert.
 
 If the borrower repays at any time during the loan duration, you receive your USDC plus interest (minus the protocol fee). You will receive the agreed-upon amount regardless of when the repayment happens.
 
