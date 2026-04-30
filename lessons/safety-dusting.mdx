@@ -1,0 +1,84 @@
+---
+title: "Safety: Dusting Attacks"
+publishedAt: '2026-04-30'
+badges:
+  - Intermediate
+  - Safety
+hiddenBadges:
+  - dusting
+  - dust attack
+  - airdrop scam
+  - fake airdrop
+  - permanent delegate
+  - freeze authority
+---
+
+## Safety: Dusting Attacks
+
+Not every threat in crypto involves someone trying to break into your wallet directly. Sometimes, the attack comes to you - in the form of a token you never asked for.
+
+**Dusting attacks** (also called airdrop scams) work by sending a worthless or malicious token directly to your wallet address. Because wallet addresses are public on the blockchain, anyone can send tokens to anyone else at any time. The scammer is counting on you to react - and reacting is exactly what you should not do.
+
+### What Is a Dusting Attack?
+
+A scammer mints a new token cheaply on Solana and mass-airdrops it to thousands of wallet addresses simultaneously. This costs them almost nothing. The token typically appears in your wallet with what looks like significant value - sometimes hundreds or even thousands of dollars. That price is entirely artificial: there is no real liquidity behind it, and it cannot actually be sold for that amount.
+
+The "dust" is bait. Your wallet is the trap.
+
+### How to Spot a Dusting Attack
+
+When an unknown token appears in your wallet that you did not purchase, ask yourself:
+
+* Did I buy this, or did it just appear?
+* Is it verified via [Jupiter VRFD](/lessons/jupiter-vrfd)?
+* Does Jupiter's JupShield show warnings like Freeze Authority, Permanent Delegate, Low Organic Activity, or New Listing?
+* Was this token created very recently?
+* Does the token name impersonate a known project (like "JupiterHub" impersonating Jupiter)?
+
+If the answer to most of these is yes, treat it as dust. The cost to the attacker of sending you this token was fractions of a cent. The cost to you of ignoring it is zero.
+
+![JupShield Warnings](/images/lesson/dusting-jup-shield.png)
+
+---
+
+### A Real Example: JUPHUB
+
+In April 2026, a token called **JUPHUB** (mint address: `Gy6Du8Ty2YXxRe8UzUavewy1RT78XBoVnZuVtYsSYcfM`) began appearing in wallets across Solana. It was created one day prior, had no organic trading activity, was not verified, and - critically - carried two dangerous token-level authorities: **Freeze Authority** and **Permanent Delegate**.
+
+When Jupiter's JupShield security layer flags a token with these warnings, it is telling you something important. Here is what those authorities actually mean:
+
+### Understanding the Red Flags
+
+On Solana, every token you hold lives in its own **Associated Token Account (ATA)** - a separate data account scoped specifically to that token. Token-level authorities can only interact with that single ATA; they cannot touch your SOL, your other tokens, or anything else in your wallet.
+
+| Authority | What It Can Do | What It Cannot Do |
+|---|---|---|
+| **Freeze Authority** | Lock your ATA, preventing you from transferring or selling that token | Touch any other asset in your wallet |
+| **Permanent Delegate** | Transfer or burn that specific token from your wallet without your approval | Access your SOL or any other token |
+
+Both of these authorities were set at the time the token was minted - meaning the token creator built them in deliberately. Legitimate projects almost never need Permanent Delegate authority. Seeing both on a brand new, unverified, zero-activity token is about as many red flags as you can stack in one place.
+
+### How the Trap Is Sprung
+
+The token sitting passively in your wallet is harmless. Tokens on Solana cannot execute code on their own. The danger only activates when you try to interact with it.
+
+Here is what typically happens next:
+
+* **You try to sell it.** The token appears to be worth money, so you navigate to a DEX to swap it. The transaction itself may be crafted to drain your real assets - SOL, USDC - as part of the swap approval.
+* **You look it up.** The token's metadata or associated website links to a phishing page designed to steal your seed phrase or request a malicious wallet signature.
+* **You try to "claim" rewards.** Scam tokens often advertise fake reward programs. Any site you are directed to is a trap.
+
+In every case, the moment you interact with the token is when you open yourself up to any risk. The dust only becomes dangerous when you pick it up.
+
+---
+
+### What You Should Do: Nothing
+
+The correct response to an unsolicited token appearing in your wallet is to do absolutely nothing. Do not:
+
+* Try to swap or sell it on Jupiter or anywhere else
+* Visit any website linked in the token's name, description, or metadata
+* Connect your wallet to any site you found by searching for the token
+* Try to "claim" any associated rewards or airdrops
+
+If you truly want to remove it from your wallet, the only safe method is to use your **wallet's native burn or close-account function** - not a third-party site. Solflare, for example, has a built-in token management UI that lets you close the ATA and recover the small amount of SOL locked as rent (~0.002 SOL). This calls Solana's standard SPL Token Program directly, completely independent of anything the token creator controls.
