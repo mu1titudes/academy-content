@@ -17,9 +17,9 @@ hiddenBadges:
 
 When startups or new protocols are raising funds or granting equity, the investors do not typically get access to the full shares immediately - they normally go through a vesting period.
 
-This is a contractual timeline between the company and their investors, where the ownership of the company is progressively released over months or years. This ensures a long-term alignment between the company, investors, and shareholders, that all parties stay committed for the long haul, which sends a strong signal to the market. In Trad-Fi, these agreements are private contracts, often difficult for outsiders to verify or even locate.
+This is a contractual timeline between the company and their investors, where the ownership of the company is progressively released over months or years. This ensures a long-term alignment between the company, investors, and shareholders, that all parties stay committed for the long haul, which sends a strong signal to the market. In TradFi, these agreements are private contracts, often difficult for outsiders to verify or even locate.
 
-Built on Solana and powered by Jupiter, Jupiter Lock is free, open-sourced, and fully audited. It allows anyone to lock tokens and distribute them in a transparent, verifiable manner, all onchain.
+Built on Solana and powered by Jupiter, Jupiter Lock is free, open-sourced, and audited by OtterSec and Sec3. It allows anyone to lock tokens and distribute them in a transparent, verifiable manner, all onchain.
 
 ### The C.A.T. Principle
 
@@ -37,9 +37,9 @@ Before creating or evaluating a lock, it is important to understand the four par
 
 **Cliff:** It is the waiting period before any tokens are released. Using the last example, a project may choose to add a cliff of 5 months, alongside the 10-month vesting period. This means that no tokens would be claimable in months 1 through 5. Starting from month 6 onwards, the remaining tokens would be released in equal installments - in this case, 20,000 per month until the end of the vesting period.
 
-**Recipient Address:** The wallet address that will receive the tokens unlocked over time. In most cases, these are the investors' wallet addresses. Jupiter Lock will automatically send tokens to the recipient addresses according to the cliff and vesting period.
+**Recipient Address:** The wallet address that will receive the tokens unlocked over time. In most cases, these are the investors' wallet addresses. Recipients claim their unlocked tokens manually through the Jupiter Lock interface, according to the cliff and vesting schedule.
 
-**Permissions:** Defines who controls the Jupiter Lock settings after its creation, giving them rights to cancel or modify the contract. It's a critical detail to determine if the stakeholders are here for the long haul. The creator can choose himself, only the recipient (investors), or both parties. Additionally, if nobody is nominated, then the contract is fully immutable and cannot be altered once the lock starts.
+**Permissions:** Defines who controls the Jupiter Lock settings after its creation, giving them rights to cancel or modify the contract. It's a critical detail to determine if the stakeholders are here for the long haul. The creator can pick one of four options: the creator alone, the recipient alone, both parties, or none. If none is selected, the contract is fully immutable and cannot be altered once the lock is created.
 
 ### Associated Risks
 
