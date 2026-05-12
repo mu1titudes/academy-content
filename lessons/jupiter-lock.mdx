@@ -1,0 +1,69 @@
+---
+title: "Locking Tokens Transparently with Jupiter Lock"
+publishedAt: '2026-04-25'
+tryUrl: 'https://lock.jup.ag/'
+badges:
+  - Intermediate
+  - Product
+hiddenBadges:
+  - Lock
+  - vesting
+  - cliff
+  - tokenomics
+  - CAT
+---
+
+## Locking Tokens Transparently with Jupiter Lock
+
+When startups or new protocols are raising funds or granting equity, the investors do not typically get access to the full shares immediately - they normally go through a vesting period.
+
+This is a contractual timeline between the company and their investors, where the ownership of the company is progressively released over months or years. This ensures a long-term alignment between the company, investors, and shareholders, that all parties stay committed for the long haul, which sends a strong signal to the market. In TradFi, these agreements are private contracts, often difficult for outsiders to verify or even locate.
+
+Built on Solana and powered by Jupiter, Jupiter Lock is free, open-sourced, and audited by OtterSec and Sec3. Common Jupiter Lock uses include token launches, team allocations, and airdrops. It allows anyone to lock tokens and distribute them in a transparent, verifiable manner, all onchain. 
+
+### The C.A.T. Principle
+
+Jupiter Lock is based on the C.A.T. principle: Certainty, Alignment, Transparency. It is the willingness to align all actors behind the same goal by providing an infrastructure where everything is visible.
+
+Community holders & investors can use Jupiter Lock to evaluate a project by finding fundamental answers to their questions, i.e., how much supply is locked, and for how long? It is also a way for token creators and project leaders to send a strong signal to the market without relying on marketing language alone.
+
+The C.A.T. principle inherently creates full alignment between all of the stakeholders of the ecosystem (from the smallest holder all the way to the founder) from the very beginning of the project.
+
+### Lock's Key Concepts
+
+Before creating or evaluating a lock, it is important to understand four key concepts that help define every Jupiter Lock contract.
+
+**Vesting Period:** The process for gradually unlocking tokens over a set period. For example, a project could lock 100,000 tokens with a vesting period of 10 months, which linearly translates to 10,000 tokens per month. The frequency of vesting is also configurable to minutes, days, weeks, months, or years. By the end of the vesting period, all the tokens will have been released. This functionality creates anticipation in markets and clear accountability for investors.
+
+**Cliff:** It is an optional, initial waiting period before any tokens are first released. Using the last example, a project could choose to lock a total of 100,000 tokens with an initial 5-month cliff, a cliff unlock amount of 50,000 tokens, and a vesting period of 10 months. No tokens would be claimable until the cliff date, after which, users can claim the cliff unlock amount of 50,000. The remaining locked tokens of 50,000 would then be unlocked over the subsequent 10-month vesting period (5,000 tokens per month).
+
+**Recipient Address:** The wallet address that will receive the tokens unlocked over time. In most cases, these are the investors' wallet addresses. Recipients claim their unlocked tokens manually through the Jupiter Lock interface, according to the cliff and vesting schedule. Each Lock contract can only service 1 address; multiple Lock contract must be created for multiple recipients.
+
+**Permissions:** Defines who controls the Jupiter Lock settings after its creation, and is a critical detail to determine if the stakeholders are here for the long haul. Permissions are split into 2 distinct settings: changing the recipient address, and cancellation of the entire lock contract. For either setting, the creator can pick one of four options: the creator alone, the recipient alone, both parties, or none. If none is selected, the contract is fully immutable and cannot be altered once the lock is created.
+
+### Associated Risks
+
+As a viewer, the main risk is a misunderstanding of the details about the project's tokenomics. Viewers should be careful to analyze the project's vesting period, the cliff, and permissions. Pay particular attention to whether the contract is cancellable: a lock that can be cancelled by the creator at any time offers much weaker guarantees than one that is fully immutable.
+
+As a creator, the main risk is misconfiguration of the project settings. Setting an incorrect vesting duration, a wrong cliff period, or even worse, a wrong recipient wallet address will be detrimental with no means of recovery. Once the transaction is signed and the contract is live onchain, the terms are binding. Always review the full Lock Summary carefully before signing.
+
+### Using Jupiter Lock
+
+**As a Viewer:**
+
+1. Go to [lock.jup.ag](https://lock.jup.ag/). You may search for a token directly via name or contract address.
+2. Review the active and expired locks, including the full details of each contract: recipient, vesting schedule, cliff, and permissions.
+3. Manually claim any unlocked tokens, according to the cliff and vesting schedule. Unclaimed tokens will stay in escrow indefinitely.
+
+![As a Viewer](https://static.academy.jup.ag/images/illustrations/lock_viewer.png)
+
+**As a Creator:**
+
+1. Go to [lock.jup.ag](https://lock.jup.ag/), and select "Create Lock" on the top of the website.
+2. Choose the token you wish to lock.
+3. Enter the recipient's wallet address and specify the number of tokens you want to lock.
+4. Define the cliff date, vesting duration, and vesting frequency. Configure the permissions accordingly by deciding whether you, the recipient, both parties, or neither will have the right to cancel or modify the recipient's address thereafter.
+5. Review the Lock Summary, then create the contract. As each Lock contract is only for a single recipient, multiple Locks will have to be made for multiple recipients.
+6. Your Lock is now officially onchain! You may find your locks under "Locks You Created" on the top of the website.
+
+![As a Creator](https://static.academy.jup.ag/images/illustrations/lock_creator.png)
