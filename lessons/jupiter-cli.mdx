@@ -1,0 +1,81 @@
+---
+title: "Trade at AI Speeds with Jupiter CLI"
+publishedAt: '2026-05-08'
+badges:
+  - Advanced
+  - Product
+hiddenBadges:
+  - Jupiter CLI
+  - CLI
+  - Command Line
+  - Terminal
+  - Automation
+---
+
+## Trade at AI Speeds with Jupiter CLI
+
+The majority of people interact with DeFi through a browser (via desktop or Jupiter mobile). They connect to their wallets and approve their transactions manually. With crypto at your fingertips it's certainly convenient, but it's designed to perform only one action at a time.
+
+For power users, professional traders, and developers, they use a completely different infrastructure: computer terminals. We call this a **Command-Line Interface** (CLI).
+
+A crypto CLI, set up correctly, can aggregate real-time pricing, on-chain metrics, news, and analytics from hundreds of exchanges and blockchain networks simultaneously into one single interface.
+
+CLIs are already the professional standard in TradFi; Bloomberg traders don't click on menus to place orders, they type commands that are able to execute a multitude of transactions at the same time.
+
+Jupiter CLI is built to give you direct access to the full Jupiter product suite: swap tokens, earn yield on Lend deposits, trade perps, and portfolio management, etc. Where the browser & mobile app are designed to be user-friendly, the CLI is designed for speed, automation, and composability.
+
+### Why Even Use a CLI?
+
+In an ultra-connected world where timing is everything, Jupiter CLI is the solution for power users. Faster executions, extreme scriptable and composable, you type structured commands to execute actions.
+
+- **Speed**. Commands execute immediately. There are no loading screens, no pop-ups, no confirmation dialogs.
+- **Scriptability**. Because every command is plain text, you can write scripts that execute dozens of trades, monitor positions, or rebalance portfolios automatically on a schedule or in response to market conditions.
+- **Composability**. CLI outputs can be piped directly into other DeFi tools, all of which can be automated via more commands.
+
+If you have ever wanted to build a trading bot, automate DCA into a specific asset, or run Jupiter logic inside a larger system, the CLI is the starting point. A few examples of what CLI commands look like in practice:
+
+```bash
+# Generate a new keypair
+jup keys add mykey
+
+# Swap 1 SOL to USDC
+jup spot swap --from SOL --to USDC --amount 1
+
+# Open a leveraged long position
+jup perps open --side long --collateral 100 --leverage 5
+
+# Deposit USDC into Jupiter Lend
+jup lend deposit --token USDC --amount 1000
+```
+
+Notice that every command is a single line, executable in a script, and produces structured output. This is what makes the CLI composable.
+
+### Understanding JSON Output Mode
+
+By default, most command-line tools return human-readable text: formatted columns, color-coded status messages, and helpful labels. That presentation is great for humans, but if you want to integrate with other DeFi products directly, it is difficult for other machines & protocols to reliably interpret.
+
+Therefore, Jupiter CLI relies on JSON output mode, an easily configured option. By enabling JSON output mode, every command returns structured data instead of readable formatted text. This is important to allow further machine-enabled manipulation of the data.
+
+Think of it this way: a restaurant delivers a finished plate, arranged and garnished, ready to eat. A JSON response delivers the raw ingredients: each one labeled, separated, and ready to be used however you choose. You can then easily route that data into a spreadsheet, a Telegram bot, an AI agent, or a custom dashboard of your choice.
+
+### Wallet Management
+
+The CLI manages wallets through keypairs stored locally on your machine. You can generate a new keypair directly from the CLI, import an existing Solana CLI keypair, or load one from a seed phrase. Your private key never leaves your machine; it is only stored locally and not on any server.
+
+This is meaningfully different from the browser or mobile app, where your wallet is managed by the extension or mobile. With the CLI, your key is a file on disk. As with any crypto keys, keep it secure.
+
+### CLI: Fast, with No Guardrails
+
+This is the most important concept in the entire lesson. The browser interface has guardrails: transaction simulation, confirmation screens, and clear summaries of what will happen before you approve. The CLI has none of those by default. When you execute a command, it signs and executes the transaction immediately.
+
+A wrong token ticker, an incorrect amount, or a mistyped slippage value will be executed onchain before you can intervene. There is no undo button in the blockchain world.
+
+It's highly recommended to run every new command type with a small amount first, verify the output matches your expectations, then scale up. Treat your first few CLI sessions as a testing environment.
+
+> **Note:** Jupiter CLI is in pre-V1 / early alpha. Breaking changes may be introduced without notice. We do not recommend building production-critical systems on top of it at this stage.
+
+---
+
+### How to Install Jupiter CLI
+
+For the full command reference, key management, configuration examples, and the latest updates, see the official Jupiter CLI documentation at [developers.jup.ag/docs/ai/cli](https://developers.jup.ag/docs/ai/cli) and the open-source repository at [github.com/jup-ag/cli](https://github.com/jup-ag/cli).
