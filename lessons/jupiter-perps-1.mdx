@@ -1,0 +1,98 @@
+---
+title: "Understanding Jupiter Perps"
+publishedAt: '2026-05-13'
+tryUrl: 'https://jup.ag/perps'
+badges:
+  - Intermediate
+  - Product
+hiddenBadges:
+  - Jupiter Perps
+  - Perpetual Futures
+  - Perps
+  - Leverage
+  - JLP
+  - Liquidation
+  - Borrow Rate
+  - Oracle
+---
+
+## Understanding Jupiter Perps
+
+In traditional finance, futures are contracts that let investors bet on an asset's future price without owning it - but they expire on a set date, forcing traders to roll positions over. **Perpetual futures** are a crypto-native evolution that removes the expiry, so positions can be held indefinitely. First popularized by BitMEX in 2016, they are now the dominant derivative on crypto venues like Binance and Hyperliquid. 
+
+**Jupiter Perps** brings this same tool on-chain on Solana, using a shared liquidity pool instead of an order book. This lesson covers how it works under the hood: the pool model, prices, leverage, fees, and the risks you need to manage.
+
+### What are Perpetual Futures
+
+A **perpetual future** is a derivative contract that tracks the spot price of an asset and never expires. You post **collateral** as margin, choose **long** (betting price will rise) or **short** (betting it will fall), and pick a **leverage** multiplier. A 5x long with 10 SOL of collateral controls a 50 SOL position - profits and losses scale with the full position size, not just your collateral.
+
+Because there is no expiry to anchor the price, perps use a periodic mechanism - a funding rate on most venues, or a borrow fee on Jupiter - to keep the perp price aligned with the underlying spot market. This is what makes them "perpetual": you can hold a position for minutes or for months, as long as your collateral covers the fees and your liquidation level isn't hit.
+
+### How Jupiter Perps Works
+
+Most perpetual exchanges (Binance, Hyperliquid) use an **order book** where buyers match with sellers. Jupiter Perps takes a different approach: a **pool-based model**. When you open a position, you borrow assets from the **Jupiter Liquidity Provider (JLP) pool**, a shared pool of SOL, ETH, wBTC, USDC, and USDT.
+
+An **oracle** (a live price feed from outside the exchange) sets the price of every trade. Large and small trades fill at the exact same oracle price, there is no slippage from order size at execution, though a separate price impact fee scales with trade size. Execution takes about 0.4 seconds.
+
+![You borrow from JLP; trades fill at the live oracle price](TBD)
+
+The tradeoff: you are trading against liquidity providers, not against other traders. When you profit, the JLP pool pays. When you lose, the pool gains.
+
+**How prices are set.** Jupiter uses a multi-oracle system for redundancy: **Edge by Chaos Labs** is the primary feed, with **Chainlink** and **Pyth** as verification and backups. If the primary feed is stale or deviates beyond a threshold, the system falls back to the others. If two out of the three fail, price updates are halted - a safety feature that protects both traders and JLP.
+
+### Leverage and Liquidation
+
+**Leverage** lets you open a position larger than your collateral, up to 250x. 10 SOL collateral at 5x gives a 50 SOL position, and gains and losses are calculated on the full size.
+
+![Higher leverage pushes liquidation dramatically closer to entry](TBD)
+
+**Liquidation** happens when your remaining collateral (after fees and unrealized losses) drops below **0.2% of your position size**. The position closes automatically and any remainder goes to JLP. Higher leverage means a smaller move liquidates you: ~50% at 2x, ~10% at 10x, ~2% at 50x. Volatile assets like SOL can move 2% in minutes. And your liquidation price **drifts over time even if price doesn't move**, because of borrow fees - covered next.
+
+### The Fee System
+
+Unlike CEX perps that charge **funding rates** (longs pay shorts or vice-versa), Jupiter charges **borrow fees**. Four cost components in total:
+
+![The four fee components on every trade](TBD)
+
+**The dual slope borrow model.** Borrow rates aren't fixed. Each asset in JLP has a **utilization rate**, the share currently borrowed by open positions. Below the target utilization, rates stay low to attract borrowers. Above it, rates rise sharply.
+
+![Rates stay low under target utilization, then spike](TBD)
+
+Why this matters: during high-volume periods, when everyone piles into the same side, borrow rates can spike. A high-leverage position held through a heavy day can accumulate fees far larger than expected. Always check the current borrow rate before opening long-duration positions.
+
+### Jupiter Perps vs CEX and Order-book DEXs
+
+If you've traded perps on Binance, Bybit, or Hyperliquid (an order-book DEX on its own chain), here's what's different on Jupiter:
+
+| Aspect | CEX / Order-book DEX | Jupiter Perps |
+| :---- | :---- | :---- |
+| Execution | Order book | Oracle-based against pool |
+| Slippage on large trades | Scales with size | Zero |
+| Funding mechanism | Funding rates | Borrow fees to JLP pool |
+| Counterparty | Other traders | JLP liquidity providers |
+| Custody of funds | Exchange holds funds | Your wallet holds funds |
+| Assets supported | Often 100+ pairs | SOL, ETH, wBTC |
+
+While Jupiter wins on execution quality for large trades (zero slippage at execution) and self-custody, centralized venues and order-book DEXs generally have a wider asset selection and lower base trading fees (the per-trade commission charged on every fill).
+
+### Risks and How to Manage Them
+
+> **Note: Perps is the highest-risk product on Jupiter**
+> Leverage amplifies both gains AND losses. You can lose your entire collateral. Only trade with funds you can afford to lose.
+
+**What can go wrong:**
+
+* **Liquidation from price moves.** Higher leverage = closer liquidation price.
+* **Liquidation from borrow fees.** Fees compound hourly. High-leverage positions held for days can be liquidated purely from accumulated fees.
+* **Volatility shocks.** Sudden moves can blow through your liquidation price before you react.
+* **High utilization periods.** Borrow rates spike when the pool is heavily borrowed.
+
+**How to mitigate:**
+
+* Start with low leverage (2-3x) while learning.
+* Always set a **Stop Loss** before you need one.
+* Monitor your liquidation price - it drifts as fees accrue.
+* Add collateral to push liquidation further from market price.
+* Check the current borrow rate before long-duration positions.
+
+Now that you understand how Jupiter Perps works, the [next lesson](/lessons/jupiter-perps-2) is a hands-on walkthrough: opening your first position, using limit orders, managing the trade, and troubleshooting common issues. 

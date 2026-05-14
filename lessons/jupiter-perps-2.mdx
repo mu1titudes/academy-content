@@ -1,0 +1,85 @@
+---
+title: "Trading on Jupiter Perps: Your First Position"
+publishedAt: '2026-05-13'
+tryUrl: 'https://jup.ag/perps'
+badges:
+  - Intermediate
+  - Product
+hiddenBadges:
+  - Jupiter Perps
+  - Perpetual Futures
+  - Perps
+  - Limit Order
+  - Stop Loss
+  - Take Profit
+  - Hedging
+  - Keeper
+---
+
+## Trading on Jupiter Perps: Your First Position
+
+Opening a futures position on a traditional broker usually involves margin agreements, account tiers, and slow order routing. On **Jupiter Perps**, you just connect your wallet, pick a direction, and trade - with every fee and liquidation number visible before you click. This lesson is the hands-on follow-up to [Understanding Jupiter Perps](/lessons/jupiter-perps-1). It walks you through opening your first position, handling limit orders, managing the trade, and troubleshooting common issues.
+
+### The Interface
+
+At **jup.ag/perps** the layout has three main areas: the chart on the left, the trading form on the right, and your open positions below. The form shows every number that matters - entry price, liquidation price, total fees - before you confirm.
+
+![Chart, trading form, and open positions at a glance](TBD)
+
+### Opening Your First Position
+
+Here's a step-by-step walkthrough. To keep risk low while you learn, this example uses 2x leverage.
+
+1. Go to **jup.ag/perps** and click **Connect**. Select your Solana wallet (Jupiter Mobile, Jupiter Extension, Phantom, Solflare, or Backpack).
+2. In the market selector, pick **SOL-PERP**, **ETH-PERP**, or **wBTC-PERP**.
+3. Choose **Long** (expecting price to rise) or **Short** (expecting it to fall).
+4. In the **You're Paying** section, pick your collateral token and enter the amount. Jupiter auto-swaps if needed.
+5. Adjust the **Leverage slider**. Start with 2x. Position size = collateral × leverage.
+6. Pick **Market** (fills now) or **Limit** (fills at a target price - see next section).
+7. Review the **Order Summary**: entry price, liquidation price, fees, borrow rate.
+8. Click **LONG** or **SHORT** and approve in your wallet. Your position appears in the Positions tab below the chart.
+
+### How Limit Orders Work: The Keeper Model
+
+Market orders fill immediately. Limit orders need to wait until price reaches your target. Jupiter handles this with a **keeper model**: an automated bot watches oracle prices on your behalf.
+
+![The four-step lifecycle of a limit order](TBD)
+
+Limit orders on Jupiter are effectively **gasless** - you only pay the base fee when the order actually fills. If the oracle feed is stale or slippage is too tight, the keeper cancels and returns your collateral rather than executing at a bad price.
+
+### Managing an Open Position
+
+Once a position is open, you have several tools in the Positions tab:
+
+* **Take Profit.** Automatically closes at a target above entry (for longs) to lock gains.
+* **Stop Loss.** Automatically closes at a level below entry (for longs) to cap losses.
+* **Edit collateral.** Add more to push liquidation further from market, or withdraw to increase leverage.
+* **Partial close.** Close a portion while keeping the rest open - useful for scaling out of a winner.
+
+Your liquidation price isn't static. It drifts over time because borrow fees reduce effective collateral. Check it at least daily for leverage above 5x.
+
+### Three Real Use Cases
+
+**1. Leveraged long on momentum**
+
+SOL is trending up. You deposit 10 SOL at $150 and open a **5x long** (50 SOL position, ~$7,500). Take Profit at $165 (+10%), Stop Loss at $143 (-5%). If SOL hits $165, you earn ~50% on collateral. If $143, you lose ~25%.
+
+**2. Hedging an existing holding**
+
+You hold SOL long-term but worry about a short-term drop. Selling would interrupt your long-term thesis. Instead, you open a small **short** sized to part of your holdings. If SOL drops, the short profits offset your portfolio loss. Cost: borrow fees while the hedge is active.
+
+**3. Short-term scalping**
+
+You want to trade intraday volatility without tying up much capital. **2-3x leverage** keeps liquidation far away; the 0.06% base fee is the main cost; borrow fees are negligible over minutes. This is the lowest-risk way to use perps.
+
+### Troubleshooting: Common Issues
+
+**"My position opened at a different price than the chart showed."** Chart data uses one price feed (optimized for display), execution uses another (optimized for on-chain settlement). Small differences are normal, especially during volatility.
+
+**"I was liquidated but the price never hit my liquidation level."** Your liquidation price moved because of accumulated borrow fees. Fees erode collateral, which shifts the liquidation price over time.
+
+**"My limit order didn't execute even though price hit my target."** The keeper only executes when oracle conditions are clean. If the feed was stale or slippage tolerance was too tight, your collateral is returned instead of a bad fill.
+
+**"Insufficient liquidity error."** Pool utilization for that asset is near 100%. Try a smaller position size, or wait for utilization to drop.
+
+**"Borrow fees are higher than expected."** You're probably above target utilization. The dual slope model kicks in aggressively above target. Check the current rate before opening new long-duration positions.
