@@ -34,7 +34,7 @@ Most perpetual exchanges (Binance, Hyperliquid) use an **order book** where buye
 
 An **oracle** (a live price feed from outside the exchange) sets the price of every trade. Large and small trades fill at the exact same oracle price, there is no slippage from order size at execution, though a separate price impact fee scales with trade size. Execution takes about 0.4 seconds.
 
-![You borrow from JLP; trades fill at the live oracle price](TBD)
+![You borrow from JLP; trades fill at the live oracle price](https://static.academy.jup.ag/images/illustrations/img1_pool_model.png)
 
 The tradeoff: you are trading against liquidity providers, not against other traders. When you profit, the JLP pool pays. When you lose, the pool gains.
 
@@ -44,7 +44,7 @@ The tradeoff: you are trading against liquidity providers, not against other tra
 
 **Leverage** lets you open a position larger than your collateral, up to 250x. 10 SOL collateral at 5x gives a 50 SOL position, and gains and losses are calculated on the full size.
 
-![Higher leverage pushes liquidation dramatically closer to entry](TBD)
+![Higher leverage pushes liquidation dramatically closer to entry](https://static.academy.jup.ag/images/illustrations/img3_leverage.png)
 
 **Liquidation** happens when your remaining collateral (after fees and unrealized losses) drops below **0.2% of your position size**. The position closes automatically and any remainder goes to JLP. Higher leverage means a smaller move liquidates you: ~50% at 2x, ~10% at 10x, ~2% at 50x. Volatile assets like SOL can move 2% in minutes. And your liquidation price **drifts over time even if price doesn't move**, because of borrow fees - covered next.
 
@@ -52,11 +52,11 @@ The tradeoff: you are trading against liquidity providers, not against other tra
 
 Unlike CEX perps that charge **funding rates** (longs pay shorts or vice-versa), Jupiter charges **borrow fees**. Four cost components in total:
 
-![The four fee components on every trade](TBD)
+![The four fee components on every trade](https://static.academy.jup.ag/images/illustrations/img4_fees.png)
 
 **The dual slope borrow model.** Borrow rates aren't fixed. Each asset in JLP has a **utilization rate**, the share currently borrowed by open positions. Below the target utilization, rates stay low to attract borrowers. Above it, rates rise sharply.
 
-![Rates stay low under target utilization, then spike](TBD)
+![Rates stay low under target utilization, then spike](https://static.academy.jup.ag/images/illustrations/img7_dual_slope.png)
 
 Why this matters: during high-volume periods, when everyone piles into the same side, borrow rates can spike. A high-leverage position held through a heavy day can accumulate fees far larger than expected. Always check the current borrow rate before opening long-duration positions.
 
