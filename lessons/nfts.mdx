@@ -1,0 +1,87 @@
+---
+title: "Owning NFTs on Solana"
+publishedAt: '2026-05-13'
+badges:
+  - Beginner
+  - Fundamentals
+hiddenBadges:
+  - NFT
+  - Non-Fungible Token
+  - Jupiter Wallet
+  - Position NFT
+  - Magic Eden
+  - Tensor
+  - SNS
+  - PFP
+---
+
+## Owning NFTs on Solana
+
+In traditional finance, a deed proves you own a house, a stock certificate proves you own shares of a company, and a numbered art print proves you own a specific copy of a work. Each is a verifiable record of ownership, often issued by a trusted authority. **NFTs (Non-Fungible Tokens)** are the digital equivalent on a blockchain: unique tokens that prove ownership of a specific item, recorded publicly and transparently. This lesson explains what NFTs are on Solana, why they matter, how to receive and manage them with **Jupiter Wallet**, and how to stay safe.
+
+### What Makes an NFT Different
+
+A regular token like SOL or USDC is **fungible**, meaning every unit is identical and interchangeable. One USDC is exactly equal to any other USDC. Fungible tokens are also **divisible**, you can split 1 SOL into 0.1 SOL and 0.9 SOL, and the two parts together are still worth exactly 1 SOL. 
+
+An **NFT is non-fungible**: each one is unique, and it cannot be split. You can't send "10% of an NFT", you either own it or you don't. Two NFTs from the same collection share style and origin, but each has its own ID, ownership history, and metadata.
+
+![Fungible tokens are interchangeable. NFTs are each one of a kind](TBD)
+
+What you actually own when you "own an NFT" is a record on the blockchain that points to the asset (an image, video, or file hosted on decentralized storage). That record proves you, and only you, control it from your wallet.
+
+### Real Use Cases
+
+NFTs are more than just profile pictures. The most common categories:
+
+* **Profile pictures (PFPs) and art.** Collections like Mad Lads, Claynosaurz, and SMB. Holders often get community access and airdrops.
+* **Gaming.** In-game items, characters, and land plots.
+* **Tickets and access.** Event tickets, membership passes, gated content.
+* **Domain names.** Solana Name Service domains (yourname.sol) are NFTs that you own, which replaces your public address with a human-readable name.
+* **Position NFTs.** A growing DeFi pattern where your position in a protocol is itself an NFT. [Jupiter Lend](lessons/jupiter-earn) (like jlWSOL or jlUSDC) are position NFTs that act like reciepts. And because these are transferable, these positions can interact with other DeFi protocols.
+
+> **Critical: Never burn your Position NFT**
+>
+> If you use Jupiter Lend, the Position NFT is required to manage and withdraw your funds. Burning it destroys your access to the underlying assets.
+
+### How Jupiter Wallet Handles NFTs
+
+**Jupiter Wallet** (mobile and browser extension) is a non-custodial Solana wallet built around trading. Only you control your keys.
+
+![Jupiter Wallet stores your NFTs. Marketplaces and explorers display them](TBD)
+
+**What it does:**
+
+* Receives any NFT to your Solana address (same address as for tokens).
+* **Displays your NFT collection visually.** Open the **NFTs** tab in Jupiter Mobile to browse your holdings as a grid with images and names.
+* Holds your NFTs securely until you transfer them.
+* Connects to marketplaces like Magic Eden and Tensor for buy / sell / list.
+* Shows every transaction for review before you sign.
+
+It's important to note that Jupiter Wallet does not run its own NFT marketplace. Buying, selling, and listing happen on third-party venues like Magic Eden or Tensor.
+
+### Risks and How to Stay Safe
+
+> **Careful: NFT scams are pervasive and creative**
+>
+> Most lost NFTs are not stolen by hackers. They are signed away by holders who didn't read the transaction. Treat every signature request as suspicious until proven safe.
+
+![The four most common NFT scams and how to avoid each](TBD)
+
+**Mitigation checklist:**
+
+* **Read every transaction before signing.** If a popup mentions transferring NFTs you didn't intend to move, reject it.
+* **Use the wallet's transaction scanner.** Jupiter Wallet flags suspicious transactions. Take warnings seriously.
+* **Never type your seed phrase.** Not on a website, not in a DM, not in a "support" form. These might be [phishing attempts](/lessons/safety-phishing). Real support never asks for it.
+* **Ignore unsolicited NFTs.** If a random NFT appears, don't click any link inside it.
+* **Bookmark official marketplaces.** Type magiceden.io or tensor.trade directly, never click ads or DM links.
+* **Use a hardware wallet** for valuable holdings. Jupiter Wallet supports Ledger, Keystone, and Trezor.
+
+### Tutorial: Receiving and Verifying Your First NFT
+
+Whether someone is sending you an NFT or you just minted one, the flow is the same.
+
+1. Open **Jupiter Wallet** (mobile or extension) and unlock it.
+2. Tap **Receive** and copy your Solana address (or share the QR code).
+3. Send the address to whoever is transferring the NFT, or paste it into the mint site. The transfer executes on-chain in about 0.4 seconds.
+4. To verify it, open the **NFTs** tab inside Jupiter Mobile, the new NFT will appear in your gallery with its image and name. You can also paste your address into **solscan.io** or connect to **magiceden.io** / **tensor.trade** for more detail.
+5. Bookmark the marketplaces you use. Never connect through links sent by strangers.
