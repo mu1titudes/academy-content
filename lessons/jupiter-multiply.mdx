@@ -8,6 +8,8 @@ badges:
 hiddenBadges:
   - Jupiter Multiply
   - Multiply
+  - loops
+  - looping
 ---
 
 ## Scaling Exposure with Jupiter Multiply
@@ -16,6 +18,7 @@ hiddenBadges:
 
 This mechanism functions similarly to **Margin Trading** or a **Lombard Loan** in TradFi, where capital is borrowed against existing securities to increase overall market exposure. It bridges the gap between simple spot trading and complex perpetual contracts, offering a streamlined way to express a bullish thesis on the <Term id="solana">Solana</Term> ecosystem.
 
+![Multiply Loops](https://static.academy.jup.ag/images/illustrations/multiply_loops.png)
 
 ### The Mechanics of One-Click Leverage
 
@@ -25,6 +28,7 @@ At its core, <Term id="multiply">Multiply</Term> automates the process of "lever
 - **The <Term id="yield">Yield</Term> Factor:** While your position is leveraged, the underlying assets often still benefit from staking yields or rewards, which can help offset the cost of the borrowed capital
 - **Simplified UX:** Unlike standard margin trading which requires managing multiple accounts, <Term id="multiply">Multiply</Term> provides a single dashboard to track your entry price, current leverage, and liquidation point
 
+![Details of a Multiply](https://static.academy.jup.ag/images/illustrations/multiply_detailed.png)
 
 ### The Infrastructure: Powered by Jupiter Lend
 
@@ -32,7 +36,6 @@ At its core, <Term id="multiply">Multiply</Term> automates the process of "lever
 
 - **Liquidity Sourcing:** When you "multiply" a position, the capital you borrow comes directly from the Jupiter Earn vaults. This ensures that you are accessing deep, protocol-level liquidity at competitive market rates
 - **Variable Interest:** The cost of your leverage (the borrow rate) is dynamic. It shifts based on the utilization of the lending pools, meaning your costs may decrease when liquidity is abundant or increase during periods of high demand
-
 
 ### Risk Management: LTV & Liquidation
 
@@ -43,7 +46,6 @@ Using leverage increases potential gains, but it also introduces unique risks th
 - **Loan-to-Value (LTV):** This is the ratio of your borrowed debt to the value of your collateral. If the price of your asset drops, your <Term id="ltv">LTV</Term> rises
 - **Liquidation Price:** This is the price at which your debt-to-collateral ratio reaches the <Term id="liquidation">Liquidation</Term> Threshold (LT). The LT is always higher than the max <Term id="ltv">LTV</Term>, creating a safety buffer between your borrowing limit and the liquidation point. At this point, the protocol must sell a portion of your collateral to repay the debt, protecting the lenders in the ecosystem
 - **Position Health:** <Term id="multiply">Multiply</Term> provides a real-time "Position Health" indicator. Maintaining a high <Term id="position-health">Position Health</Term> by keeping lower leverage or adding more collateral is the primary way to defend against market volatility
-
 
 ## Hands on Jupiter Multiply
 
