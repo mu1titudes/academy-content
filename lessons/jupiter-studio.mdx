@@ -32,13 +32,13 @@ The mechanism that lets Studio launches work without upfront liquidity is the **
 
 A Studio token is not designed to live on the bonding curve forever. Once enough quote tokens have been raised, the token **graduates** - meaning its liquidity migrates to a permanent Meteora pool, and the bonding curve is retired.
 
-Graduation triggers automatically when the bonding curve has raised enough quote tokens to reach the graduation market cap set at launch. The minimum raise required across both modes is **15,000 USDC** or equivalent.
+Graduation triggers automatically when the bonding curve has raised enough quote tokens to reach the graduation market cap set at launch, and is set by the token creator during the initial setup.
 
 When graduation triggers:
 
-1. The quote tokens raised on the curve are migrated into a new Meteora **DAMMv2** pool - a constant-product (`xy=k`) liquidity pool
-2. The corresponding share of the token supply (21% in meme mode, variable in custom mode) is paired with the raised capital to seed the pool
-3. **50% of the LP tokens are locked for one year**, then become claimable by the creator. The remaining 50% accrue to the protocol side. While locked, both sides earn ongoing trading fees from the pool. The locked LP cannot be withdrawn until the one-year vesting period ends - this is what the "LP lock" trust signal refers to.
+1. The quote tokens raised on the curve are migrated into a new Meteora **DAMMv2** pool - a constant-product (`xy=k`) liquidity pool.
+2. The corresponding share of the token supply (21% in meme mode, variable in custom mode) is paired with the raised capital to seed the pool.
+3. All LP tokens from this pool are permanently locked. No one can remove liquidity.
 
 After graduation, the token trades on Meteora rather than on Studio's curve. Anyone can choose to add additional liquidity to the Meteora pool, but those new positions are subject to standard LP risks like impermanent loss.
 
@@ -87,7 +87,7 @@ Studio is built to remove friction at launch, not to remove risk. Several charac
 - **Parameters are permanent.** Market caps, vesting schedule, anti-sniper toggle, and quote token are all set at launch and cannot be modified. There is no admin override
 - **Graduation is not guaranteed.** Most tokens launched on any bonding curve platform do not graduate. A token that fails to reach its graduation threshold simply remains on the curve - functional, but without the deeper liquidity a Meteora pool would provide
 - **Anti-sniper fees can be punishing for buyers.** Buying within the first 15-60 seconds can cost dramatically more than a standard trade. The warning on jup.ag is the practical signal to wait
-- **LP unlock at year one.** 50% of the post-graduation LP is locked for one year before becoming claimable by the creator. Until that point, neither side can withdraw the liquidity that seeded the Meteora pool, though both sides continue to earn trading fees from it.
+- **All LP is permanently locked.** No one can remove liquidity upon graduation of the token.
 - **Adding post-graduation liquidity carries standard LP risk.** Anyone can add liquidity to the Meteora pool after graduation, but those new positions are exposed to impermanent loss and full market risk on the token
 
 For buyers, the practical implication is to evaluate any Studio token the same way you would evaluate any new community token: check the creator's vesting schedule, the quote token, whether the token has graduated, and how much organic trading volume actually exists. The mechanics are transparent, but transparency is not the same as a guarantee of returns.
