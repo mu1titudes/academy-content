@@ -31,8 +31,6 @@ Where Swap is a single form for any token-to-token trade, Terminal adds:
 * Quick Buy / Quick Swap for one-click execution from any list
 * Integrated PnL tracking across your holdings
 
-Terminal was originally launched in 2024 as **Ape Pro**, and was later merged into the main Jupiter platform.
-
 ### The Discover Feed
 
 The default landing view is **Discover**, which has several sub-tabs to filter what you see:
@@ -41,14 +39,10 @@ The default landing view is **Discover**, which has several sub-tabs to filter w
 * **Top Traded**, highest 24-hour volume.
 * **Organic**, tokens sorted by Organic Score, which estimates real user activity vs. bots and wash trading.
 * **Launchpads**, tokens launched through supported launchpads.
+* **Stocks**, tokenized equities available on Solana.
+* **Stablecoins**, dollar-pegged and other stable assets.
 
-Each row shows the token's ticker, age, current price, market cap, 24h volume, liquidity, holder count, and a mini sparkline. A **Quick Buy** button on every row lets you purchase directly from the list using your saved settings.
-
-### The Organic Score
-
-Memecoin markets are flooded with bots, wash trading, and pump-and-dump activity. To help you separate signal from noise, Jupiter calculates an **Organic Score** for each token via [Jupiter VRFD](/lessons/jupiter-vrfd). The Organic Score acts as a heuristic that estimates how much of a token's activity comes from genuine wallets versus automated trading.
-
-Higher Organic Score means more real activity. The Organic sub-tab in Discover lets you sort the entire feed by this metric, surfacing tokens that look like they have actual community traction. Important: Organic Score is a heuristic, not a guarantee. Sophisticated bot networks can still inflate it.
+Each row shows key token data at a glance - price, market activity, and other relevant metrics depending on the view. A **Quick Buy** button on every row lets you purchase directly from the list using your saved settings.
 
 ### AlphaScan: Tracking the Token Lifecycle
 
@@ -63,6 +57,12 @@ Most memecoins on Solana follow a predictable lifecycle. They launch on a **laun
 * **Bonded**, recently completed the curve and migrated to a standard AMM pool. Liquidity becomes deeper and price impact drops.
 
 Why this matters: before migration, liquidity is limited and a small buy can move the price significantly. After migration, the token behaves like any other AMM-traded asset.
+
+### The Organic Score
+
+Memecoin markets are flooded with bots, wash trading, and pump-and-dump activity. To help you separate signal from noise, Jupiter calculates an **Organic Score** for each token via [Jupiter VRFD](/lessons/jupiter-vrfd). The Organic Score acts as a heuristic that estimates how much of a token's activity comes from genuine wallets versus automated trading.
+
+Higher Organic Score means more real activity. The Organic sub-tab in Discover lets you sort the entire feed by this metric, surfacing tokens that look like they have actual community traction. Important: Organic Score is a heuristic, not a guarantee. Sophisticated bot networks can still inflate it.
 
 ### Safety Indicators: The Pre-Trade Checklist
 
@@ -87,7 +87,7 @@ Every token detail page in Terminal shows a checklist of safety indicators. None
 * **[Rug pulls](/lessons/safety-rugs).** Creator drains liquidity or freezes accounts. Even with safety indicators, a determined scammer can mask intent.
 * **Coordinated dumps.** Concentrated holdings (high Top 10 %) can collapse the price in seconds.
 * **Bonding curve illiquidity.** Pre-migration tokens have thin liquidity, small trades can move price 10% or more.
-* **Bot frontrunning.** Even with MEV protection, expect to be slower than dedicated sniper bots on the freshest launches.
+* **Sniper bots.** Expect to be slower than dedicated sniper bots that run on optimized infrastructure specifically to buy the freshest launches faster than any retail user can.
 
 **How to mitigate:**
 
