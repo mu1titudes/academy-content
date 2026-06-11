@@ -18,11 +18,11 @@ hiddenBadges:
 
 ## Understanding Jupiter Perps
 
-In traditional finance, futures are contracts that let investors bet on an asset's future price without owning it - but they expire on a set date, forcing traders to roll positions over. **Perpetual futures** are a crypto-native evolution that removes the expiry, so positions can be held indefinitely. First popularized by BitMEX in 2016, they are now the dominant derivative on crypto venues like Binance and Hyperliquid. 
+In traditional finance, futures are contracts that let investors bet on an asset's future price without owning it - but they expire on a set date, forcing traders to roll positions over. **Perpetual futures** are a crypto-native evolution that removes the expiry, so positions can be held indefinitely. First popularized by BitMEX in 2016, they are now the dominant derivative on crypto venues like Binance and Hyperliquid.
 
-**Jupiter Perps** brings this same tool on-chain on Solana, using a shared liquidity pool instead of an order book. This lesson covers how it works under the hood: the pool model, prices, leverage, fees, and the risks you need to manage.
+**Jupiter Perps** brings this same tool onchain on Solana, using a shared liquidity pool instead of an order book. This lesson covers how it works under the hood: the pool model, prices, leverage, fees, and the risks you need to manage.
 
-### What are Perpetual Futures
+### What are Perpetual Futures?
 
 A **perpetual future** is a derivative contract that tracks the spot price of an asset and never expires. You post **collateral** as margin, choose **long** (betting price will rise) or **short** (betting it will fall), and pick a **leverage** multiplier. A 5x long with 10 SOL of collateral controls a 50 SOL position - profits and losses scale with the full position size, not just your collateral.
 
@@ -30,9 +30,9 @@ Because there is no expiry to anchor the price, perps use a periodic mechanism -
 
 ### How Jupiter Perps Works
 
-Most perpetual exchanges (Binance, Hyperliquid) use an **order book** where buyers match with sellers. Jupiter Perps takes a different approach: a **pool-based model**. When you open a position, you borrow assets from the **Jupiter Liquidity Provider (JLP) pool**, a shared pool of SOL, ETH, wBTC, and USDC.
+Most perpetual exchanges (Binance, Hyperliquid) use an **order book** where buyers match with sellers. Jupiter Perps takes a different approach: a **pool-based model**. When you open a position, you borrow assets from the **Jupiter Liquidity Provider (JLP) pool**, a shared pool of various established tokens and stablecoins.
 
-An **oracle** (a live price feed from outside the exchange) sets the price of every trade. Large and small trades fill at the exact same oracle price, there is no slippage from order size at execution, though a separate price impact fee scales with trade size. Execution takes about 0.4 seconds.
+An **oracle** (a live price feed from a third party provided) sets the price of every trade. Large and small trades fill at the exact same oracle price. There is no slippage from order size at execution, though a separate price impact fee scales with trade size.
 
 ![You borrow from JLP; trades fill at the live oracle price](https://static.academy.jup.ag/images/illustrations/img1_pool_model.png)
 
@@ -50,7 +50,7 @@ The tradeoff: you are trading against liquidity providers, not against other tra
 
 ### The Fee System
 
-Unlike CEX perps that charge **funding rates** (longs pay shorts or vice-versa), Jupiter charges **borrow fees**. Four cost components in total:
+Unlike CEX perps that charge **funding rates** (longs pay shorts or vice-versa), Jupiter approaches fees in a different manner. There are four cost components in total: the base fee, the price impact fee, the borrow fee, and the network / rental fee.
 
 ![The four fee components on every trade](https://static.academy.jup.ag/images/illustrations/img4_fees.png)
 
@@ -67,7 +67,7 @@ If you've traded perps on Binance, Bybit, or Hyperliquid (an order-book DEX on i
 | Aspect | CEX / Order-book DEX | Jupiter Perps |
 | :---- | :---- | :---- |
 | Execution | Order book | Oracle-based against pool |
-| Slippage on large trades | Scales with size | Zero |
+| Slippage on large trades | Scales with size | Zero (price impact fee applies) |
 | Funding mechanism | Funding rates | Borrow fees to JLP pool |
 | Counterparty | Other traders | JLP liquidity providers |
 | Custody of funds | Exchange holds funds | Your wallet holds funds |
