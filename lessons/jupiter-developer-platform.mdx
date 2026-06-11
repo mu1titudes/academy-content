@@ -19,19 +19,17 @@ hiddenBadges:
 
 When a company is integrating functionality on top of their app, they need more than just an API. They need a complete dashboard to manage access, monitor usage, and prevent future issues before their users notice.
 
-Launched on April 2026, Jupiter Developer Platform is a unified hub that centralizes everything a developer needs to build on top of Jupiter. With this Platform, Jupiter is positioning itself as the infrastructure layer for on-chain builders. 
+Launched in April 2026, Jupiter Developer Platform is a unified hub that centralizes everything a developer needs to build on top of Jupiter. With this Platform, Jupiter is positioning itself as the infrastructure layer for onchain builders. 
 
 ### Jupiter Developer Platform Key Concepts
 
 Jupiter Developer Platform allows you to access the full range of Jupiter's APIs.
 
-An **API key** is a unique credential that identifies your application when it makes requests to Jupiter's infrastructure. You need one to access all Developer Platform features. You can still use the platform without one, but you will be rate-limited to 1 request per second, which is sufficient for testing and prototyping. 
+An **API key** is a unique credential that identifies your application when it makes requests to Jupiter's infrastructure. You need one to access all Developer Platform features. You can still use the platform without one, but you will be rate-limited to 0.5 request per second, which is sufficient for testing and prototyping. 
 
-A **rate limit** defines how many API requests your application can make per second. Having an API key allows you to make more requests per second, letting your application handle more volume without hitting ceilings.
+A **rate limit** defines how many API requests your application can make per second. Having an API key allows you to make more requests per second, letting your application handle more volume without hitting ceilings. The platform offers several plans according to your usage. Paid plans unlock higher rate limits and bundled credits. 
 
-Jupiter Developer Platform offers several plans according to your usage. Paid plans unlock higher rate limits and bundled credits.
-
-As mentioned in the beginning, Jupiter Developer Platform provides a full infrastructure where you can analyze, monitor, and have actionable insights. It gives you visibility into how your integration is performing with real-time dashboards showing request volume, latency percentiles, and error rates. There are additional features such as Firewall and API Permissions, which allow you to block or only allow requests from certain regions, IPs, or only allow one API key to work for a particular API or endpoint. This allows you to use API keys in your frontend apps without the fear being spammed or DDOS'ed.
+Jupiter Developer Platform also provides a full infrastructure where you can analyze, monitor, and have actionable insights. It gives you visibility into how your integration is performing with real-time dashboards showing request volume, latency percentiles, and error rates. There are additional features such as Firewall and API Permissions, which allow you to block or only allow requests from certain regions, IPs, or only allow one API key to work for a particular API or endpoint. This allows you to use API keys in your frontend apps without the fear of being spammed or DDoS'd.
 
 Jupiter Developer Platform also provides governance for your organization. You can choose the level of permissions you want to give to your team. One developer can have admin access, another read-only.
 
@@ -47,16 +45,14 @@ The platform also has several developer tooling layers built on top of the API.
 
 - **CLI** is a [command-line interface](/lessons/jupiter-cli) that lets you swap tokens, trade perps, and manage your portfolio. To make it simpler, it allows you to interact with all Jupiter products in the same place.
 
-- **MCP** (Model Context Protocol) lets AI agents and AI-powered editors (Claude, Cursor, etc.) query Jupiter's APIs and docs directly. You point your MCP-compatible editor at Jupiter's MCP server and the agent can search docs, build transactions, or run swaps on your behalf.
+- **MCP** (Model Context Protocol) lets AI agents and AI-powered editors (Claude, Cursor, etc.) query Jupiter's APIs and docs directly. You point your MCP-compatible editor at Jupiter's read-only documentation server and the agent can search docs on your behalf. 
 
 - **Skills** are pre-built context bundles that give coding agents structured integration guidance. Point an agent (Claude Code, Cursor, etc.) at a Jupiter Skill and it knows how to write code that calls a specific Jupiter API correctly the first time, without burning context on reading the docs.
 
-Through this API, Jupiter Developer Platform provides you with the full API suite of Jupiter (Ultra swap API, Price API, Prediction market API, Transaction submission API, and more).
+Through this API, Jupiter Developer Platform provides you with the full API suite of Jupiter (Swap API, Price API, Prediction market API, Transaction submission API, and more).
 
 ### Risks Related to Jupiter Developer Platform
 
-As mentioned in the introduction, the platform launched in April 2026. The platform is at an early stage and things can evolve quickly (endpoints updated, pricing structures changed).
+The platform is at an early stage and things can evolve quickly (endpoints updated, pricing structures changed). If you're building on top of older Jupiter integrations, verify your endpoints are up to date before deploying. Plan your tier before shipping to production to avoid any unexpected issues.
 
-If you're building on top of older Jupiter integrations, verify your endpoints are up to date before deploying. Plan your tier before shipping to production to avoid any unexpected issues.
-
-Always monitor the update page at [https://developers.jup.ag/](https://developers.jup.ag/) for changes that could affect your integration.
+Always monitor the portal page at [https://developers.jup.ag/](https://developers.jup.ag/) for changes that could affect your integration.
