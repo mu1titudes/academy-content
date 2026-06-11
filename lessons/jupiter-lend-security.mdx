@@ -12,7 +12,7 @@ hiddenBadges:
   - Multisig
 ---
 
-## The Security of Jupiter Lend
+## How Jupiter Lend Keeps Your Funds Safe
 
 In DeFi lending, the rates a protocol offers matter far less than the infrastructure behind them. The best yield in the ecosystem is meaningless if the protocol can be exploited. Security rarely becomes a topic of conversation until something goes wrong - which is exactly why it is worth understanding before committing capital.
 
@@ -38,17 +38,17 @@ The second layer governs who can change the protocol, and under what circumstanc
 - **Program upgrades are subject to a 12-hour timelock.** Even after the multisig approves a change, it does not take effect for 12 hours. This window gives the community time to inspect any pending upgrade and respond if something looks wrong.
 - **Program upgrades require verifications from 3 independent parties.** Right before the upgrade goes live, the verifiers ensure that the submitted upgrade is exactly the same as the one about to go live, by means of a unique identifier called a "hash". If even a single character of code were altered between deployment and the audit, the hashes will not match.
 - **Non-program upgrades require 6 of 10 signers.** Administrative changes that fall short of full program modifications are subject to an even higher threshold.
-- **All multisig transactions require at least three independent verifications of the underlying transaction.** One known attack vector in multisig systems is when signers approve a transaction that appears legitimate in their interface but contains different instructions when executed. This is known as a 'signing-UI manipulation', and the verification requirement closes off that vector.
+- **All multisig transactions require at least three independent verifications of the underlying transaction.** One known attack vector in multisig systems is when signers approve a transaction that appears legitimate in their interface but contains different instructions when executed. This is known as a "signing-UI manipulation", and the verification requirement closes off that vector.
 
-Each of these mechanisms addresses a distinct threat. A compromised signer cannot act alone. A coordinated attack cannot bypass the timelock. The layers are designed to fail independently, not together.
+Each of these mechanisms addresses a distinct threat. A compromised signer cannot act alone. A coordinated attack cannot bypass the timelock. Each layer is designed to hold independently - a breach of one does not cascade to the others.
 
 ### Layer 3: The Oracle Stack
 
-Price feeds are the third layer - and historically, one of the most exploited surfaces in DeFi lending. A protocol that prices assets incorrectly can trigger unjust liquidations or allow undercollateralized loans to be opened.
+Price feeds are the third layer - and historically, one of the most exploited surfaces in DeFi lending. A protocol that prices assets incorrectly can trigger erroneous liquidations or allow undercollateralized loans to be opened.
 
 Jupiter Lend addresses this through several mechanisms working in parallel:
 
-- **Triple Oracle Redundancy** via Chainlink, Pyth, and Redstone. Three independent price sources from three separate providers means a single oracle failure or manipulation cannot compromise the protocol's pricing.
+- **Triple Oracle Redundancy** via Chainlink, Pyth, and Redstone. Three independent price sources from three separate providers mean a single oracle failure or manipulation cannot compromise the protocol's pricing.
 - **Multi-Source Price Calculations.** Rather than relying on a single direct feed per asset, prices are derived by combining data from multiple sources, validating integrity at each step and reducing dependency on any single provider.
 - **Freshness & Confidence Checks on Every Price.** Prices must be recent and must arrive with a tight confidence range. Prices that are stale or uncertain are rejected outright. Stale data is one of the most common attack vectors in lending exploits, and these checks eliminate that category entirely.
 - **Contract-Based Pricing for LSTs.** [Liquid staking tokens](/lessons/pegged-vaults) are priced directly from their onchain redemption rates rather than from external market feeds. This makes their valuation immune to short-term market depegs.
@@ -57,6 +57,6 @@ Jupiter Lend addresses this through several mechanisms working in parallel:
 
 The final layer is a structural safeguard designed for worst-case scenarios where every prior layer fails.
 
-Jupiter Lend's **dynamic borrow and withdrawal ceilings** prevent sudden large movements of liquidity - the kind of rapid outflow that typically characterizes an active exploit or a critical error. These ceilings adjust continuously based on protocol activity, allowing the system to stabilize during periods of high volatility without restricting ordinary usage.
+Jupiter Lend's **dynamic borrow and withdrawal ceilings** prevent sudden large movements of liquidity - the kind of rapid outflow that typically characterizes an active exploit or a critical error. These ceilings adjust regularly based on protocol activity, allowing the system to stabilize during periods of high volatility without restricting ordinary usage.
 
 Even if a vulnerability were somehow to bypass the code audits, the operational controls, and the oracle stack, the circuit breaker would limit the damage by preventing the rapid drain of protocol funds.
