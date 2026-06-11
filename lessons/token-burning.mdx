@@ -1,5 +1,5 @@
 ---
-title: "Token Burning"
+title: "Token Burning: How Jupiter Manages Supply"
 publishedAt: '2026-05-08'
 badges:
   - Intermediate
@@ -12,7 +12,7 @@ hiddenBadges:
   - JUP
 ---
 
-## Token Burning
+## Token Burning: How Jupiter Manages Supply
 
 In traditional finance, when a company wants to return value to its shareholders, it buys back its own stock from the open market and retires it. Apple, for example, has bought back more than $600 billion worth of AAPL stock since 2012 - a common practice on Wall Street. As the total circulating shares decrease, each remaining holder owns a slightly larger piece of the company.
 
@@ -26,33 +26,33 @@ When a token is burned, the project decreases its supply. To understand the impa
 - **Total Supply**: the number of tokens that currently exist on-chain. This is max supply minus any tokens that have been burned. It changes over time.
 - **Circulating Supply**: the portion of total supply that's actively in the market - total supply minus tokens that are locked, vested, or held in the treasury.
 
-A burn typically affects **Total Supply** directly (the tokens are destroyed and removed from on-chain accounting). Whether it affects Circulating Supply depends on where the burned tokens came from: burning tokens from a treasury reserve doesn't change circulating supply, while burning tokens that were already in circulation reduces both.
+A burn typically affects **Total Supply** directly (the tokens are destroyed and removed from onchain accounting). Whether it affects Circulating Supply depends on where the burned tokens came from: burning tokens from a treasury reserve doesn't change circulating supply, while burning tokens that were already in circulation reduces both.
 
 For example, in a token with 1,000 max supply, 1,000 total supply, and 900 circulating: if the team buys back 10 tokens from the open market and burns them, total supply drops to 990 and circulating supply drops to 890.
 
 ### How To Burn a Token?
 
-There are three main ways to burn a token. One has a direct impact on circulating supply, and the others do not, but all achieve the same practical effect.
+There are three main ways to burn a token. The mechanism may differ from method to method, but all three achieve the same practical effect of permanently removing tokens from the market.
 
 - **Direct burning.** Projects use specialized tools (like Sol-Incinerator) or built-in protocol mechanisms to permanently remove tokens from supply. This is what is formally called a "burn".
-- **Permanent lock.** Projects can choose to lock tokens indefinitely using tools like [Jupiter Lock](/lessons/jupiter-lock). The tokens technically remain in the circulating supply because they weren't destroyed, but no one can ever access them again - the effect on the market is identical.
-- **Dead address.** Similarly, tokens can be sent to a "dead address" - a wallet for which no one holds the private key. The funds sent there are lost forever. They remain counted in the circulating supply but are permanently off the market.
+- **Permanent lock.** Projects can choose to lock tokens indefinitely using tools like [Jupiter Lock](/lessons/jupiter-lock). By definition the locked tokens are also removed from the circulating supply.
+- **Dead address.** Similarly, tokens can be sent to a "dead address" - a wallet for which no one holds the private key. The funds sent there are lost forever. While these tokens are technically counted in the circulating supply, practically speaking they are permanently off the market.
 
 ### Jupiter's Burn Mechanisms
 
 When a protocol burns its tokens on an ongoing basis, it is considered deflationary. Deflationary tokenomics means the supply decreases over time, which is the opposite of inflationary systems where new tokens are continuously minted.
 
-Jupiter is a deflationary protocol, with several mechanisms in place to decrease the supply of $JUP and return value to holders.
+Jupiter is a deflationary protocol, with several mechanisms in place to decrease the supply of JUP and return value to holders.
 
-For example, during Jupiter's first community conference, Catstanbul, the Jupiter team burned 3 billion JUP tokens (roughly 30% of the total supply) and celebrated it publicly with the community. At the same event, the team announced a buyback program funded by 50% of protocol revenues.
+For example, during Jupiter's first community conference, Catstanbul, the Jupiter team burned 3 billion JUP tokens (roughly 30% of the total supply) and celebrated it publicly with the community. At the same event, the team announced a buyback program funded by 50% of onchain revenues.
 
-Since January 2025, the Jupiter team has bought back more than 250 million JUP tokens. You can follow the daily buyback activity directly on X at [litterboxtrust](https://x.com/litterboxtrust).
+Since February 2025, the Jupiter team has bought back more than 250 million JUP tokens. You can follow the daily buyback activity directly on X at [litterboxtrust](https://x.com/litterboxtrust).
 
 ![Litterbox Oct 2025](https://static.academy.jup.ag/images/illustrations/litterbox_Oct2025.png)
 
-At the end of 2025, the [Jupiter DAO](/lessons/jupiter-governance) voted to burn all of the $JUP accumulated through buybacks up to that point, destroying more than 134 million tokens in a single onchain event.
+At the end of 2025, the [Jupiter DAO](/lessons/jupiter-governance) voted to burn all of the JUP accumulated through buybacks up to that point, destroying more than 134 million tokens in a single onchain event.
 
-Jupiter also has a constant burn mechanism built directly into the protocol, called Express Lane Verification. Creators who want an expedited review of their token on the [Jupiter Verified](/lessons/jupiter-vrfd) list must pay 1,000 JUP tokens to access the express review, which guarantees a review within 48 hours, amongst other perks. That token fee is burned, therefore every verification request removes $JUP from circulation permanently.
+Jupiter also has a constant burn mechanism built directly into the protocol, called Express Lane Verification. Creators who want an expedited review of their token on the [Jupiter Verified](/lessons/jupiter-vrfd) list must pay 1,000 JUP tokens to access the express review, which guarantees a review within 48 hours, amongst other perks. That token fee is burned, therefore every verification request removes JUP from circulation permanently.
 
 ### Why Burns Matter to Holders
 
