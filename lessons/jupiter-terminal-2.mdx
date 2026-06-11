@@ -18,15 +18,15 @@ hiddenBadges:
 
 ## Trading on Jupiter Terminal: Your First Memecoin Trade
 
-Buying a stock on a traditional broker takes a quote, a confirmation screen, and minutes of settlement. **Jupiter Terminal** compresses that flow into a single click, Quick Buy from any feed, Quick Swap from any token page, with **MEV protection** behind every trade, routed through Jupiter Beam, Jupiter's own transaction landing service, via [Ultra Swap](/lessons/jupiter-swap). This lesson is the hands-on follow-up to [Discovering Memecoins on Jupiter Terminal](/lessons/jupiter-terminal-1). It covers Terminal's settings, the trade flow, PnL tracking, and how to troubleshoot the most common issues.
+Buying a stock on a traditional broker takes a quote, a confirmation screen, and minutes of settlement. **Jupiter Terminal** compresses that flow into a single click: Quick Buy from any feed, Quick Swap from any token page. This includes **MEV protection** behind every trade, routed through Jupiter Beam, Jupiter's own transaction landing service, via [Ultra Swap](/lessons/jupiter-swap). This lesson is the hands-on follow-up to [Discovering Memecoins on Jupiter Terminal](/lessons/jupiter-terminal-1). It covers Terminal's settings, the trade flow, PnL tracking, and how to troubleshoot the most common issues.
 
 ### The Three Ways to Trade
 
-Terminal offers three trade flows, so that you may pick based on your situation.
+Terminal offers three trade flows, so that you can pick the one that fits your situation.
 
 * **Quick Buy** is by far the fastest method. Represented by the lightning rod, it is located on the Discover and AlphaScan pages, on the extreme right side of each token line. Above the Quick Buy column, you can change the preset amount used for each Quick Buy, as well as toggle between SOL and USDC. Good for snap decisions on tokens you've already vetted. To truly unlock the Quick Buy experience, it is recommended to use with a Jupiter wallet with Auto Approve enabled.
-* **Quick Swap** is most controlled and familiar - utilizing the classic Jupiter Swap interface. Best for typical memecoin trading. Click any token to open its detailed page and you'll find the token information together with the Quick Swap interface. This allows you to perform swaps, limit orders, and recurring orders all without leaving the page. Additionally, Quick Swap only uses Jupiter's Ultra. Quick Swap should be the default option present, and can be toggled using the Settings cog icon in the top right hand corner.
-* **Trench Mode** is most powerful and flexible trade method of all, for only the most experienced of traders. You can toggle to Trench Mode using the Settings cog icon in the top right hand corner, which changes the interface for each token's detailed page. On top of everything that Quick Swap can do, Trench mode also allow customization of slippage and transaction fees.
+* **Classic Mode** is most controlled and familiar - utilizing the classic Jupiter Quick Swap interface. Best for typical memecoin trading. Click any token to open its detailed page and you'll find the token information together with the Quick Swap interface. This allows you to perform swaps, limit orders, and recurring orders all without leaving the page. Additionally, Quick Swap only uses Jupiter's Ultra. Classic Mode should be the default option present, and can be toggled using the Settings cog icon in the top right hand corner.
+* **Trench Mode** is the most powerful and flexible trade method of all, for only the most experienced of traders. You can toggle to Trench Mode using the Settings cog icon in the top right hand corner, which changes the interface for each token's detailed page. On top of everything that Classic Mode can do, Trench Mode also allows customization of slippage and transaction fees.
 
 ![Trench Mode vs Classic Mode](https://static.academy.jup.ag/images/illustrations/terminal_modes.png)
 
@@ -38,7 +38,7 @@ This walkthrough uses Quick Buy with a small position - adjust accordingly to yo
 
 ![The Terminal Discover feed with Quick Buy buttons on every row](https://static.academy.jup.ag/images/illustrations/appterminal.png)
 
-1. Go to **jup.ag/terminal** and click **Connect** in the top-right. Select your Solana wallet (Jupiter Mobile, Jupiter Extension).
+1. Go to **jup.ag/terminal** and click **Connect** in the top-right corner. Select your Solana wallet (Jupiter Mobile, Jupiter Extension).
 2. On the right corner, adjust your Quick Buy amount. You may also choose between SOL and USDC for your Quick Buys.
 3. In the Discover feed, click the **Cooking** or **Top Traded** sub-tab.
 4. Pick a token whose row catches your eye, and click on the token name to open its detailed page.
@@ -49,7 +49,7 @@ This walkthrough uses Quick Buy with a small position - adjust accordingly to yo
 
 ### Tracking Your PnL
 
-The [Positions tab](https://jup.ag/terminal/positions) is Terminal's PnL dashboard. It tracks unrealized and realized profit and loss across every token you have ever traded on the platform, entry price, current price, total fees paid, and net result per holding. Use it weekly to review what worked and what didn't. The pattern matters more than any individual win, track which categories (Cooking momentum, Organic finds, AlphaScan launches) actually make you money.
+The [Positions tab](https://jup.ag/terminal/positions) is Terminal's PnL dashboard. It tracks unrealized and realized profit and loss across every token you have ever traded on the platform, entry price, current price, and other metrics. Use it weekly to review what worked and what didn't. The pattern matters more than any individual win; track which categories (Cooking momentum, Organic finds, AlphaScan launches) actually make you money.
 
 ### Real Use Cases
 
@@ -61,7 +61,7 @@ The [Positions tab](https://jup.ag/terminal/positions) is Terminal's PnL dashboa
 
 ### Troubleshooting: Common Issues
 
-- **"Slippage exceeded."** Your slippage tolerance was too tight. Increase it in Settings, for memecoins, 10-15% is often needed during volatile periods.
+- **"Slippage exceeded."** Your slippage tolerance was too tight. Increase it in Settings, especially for memecoins, as a higher slippage tolerance is often needed during volatile periods.
 - **"Route not found."** The token may still be on its bonding curve and not yet on a standard liquidity pool. Wait for AlphaScan to show Bonded, or try a smaller amount.
 - **"Watchlist disappeared."** Watchlist is stored in your browser cache. It resets when you clear data, switch devices, or use incognito mode.
 - **"Higher fees than expected."** Some browser extensions inject their own referral fees on top of Jupiter's. If your fee looks wrong, disable third-party trading extensions and retry.
