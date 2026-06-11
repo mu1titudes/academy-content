@@ -24,8 +24,8 @@ Jupiter uses the same logic onchain by introducing Jupiter Plugin, which allows 
 With a few lines of code, any developer can bring the full Jupiter swap experience into their own website or application. This opens the entire Solana ecosystem to build on top of Jupiter.
 
 - **Swap Interface:** Jupiter Plugin provides the complete swap interface: token selection, route display, slippage settings, transaction confirmation, and more.
-- **Plug and Play:** Jupiter Plugin is designed to work with minimal setup. Developers don't need to understand Jupiter's internal architecture or Solana's transaction model in depth. Setting a few basic parameters is enough to get it running.
-- **RPC-Less:** Jupiter Plugin does not require the developer to run or manage their own RPC node, which is a server connected to a blockchain that processes requests from applications and users. Instead, [Jupiter Ultra](lessons/jupiter-swap) handles transaction sending, wallet balance lookups, and token information on the integrating app's behalf. This eliminates a meaningful infrastructure cost and operational burden for the integrating team.
+- **Plug-and-Play:** Jupiter Plugin is designed to work with minimal setup. Developers don't need to understand Jupiter's internal architecture or Solana's transaction model in depth. Setting a few basic parameters is enough to get it running.
+- **RPC-less:** Jupiter Plugin does not require the developer to run or manage their own RPC node, which is a server connected to a blockchain that processes requests from applications and users. Instead, [Jupiter Ultra](/lessons/jupiter-swap) handles transaction sending, wallet balance lookups, and token information on the integrating app's behalf. This eliminates a meaningful infrastructure cost and operational burden for the integrating team.
 
 ### Display Modes
 
@@ -34,6 +34,8 @@ Jupiter Plugin ships with three display modes, letting developers choose the int
 - **Modal:** A pop-up is displayed covering the full screen. The user swaps and closes the pop-up, returning to the initial window. This is the most convenient option for apps that don't want to adapt their design to Jupiter Plugin.
 - **Integrated:** Jupiter Plugin is embedded directly in the display of your website. There is no pop-up - the swap function becomes a direct component of the page itself. This creates an immersive experience where the swap feels native to the product.
 - **Widget:** A small floating button fixed to a corner of the screen. This is ideal for apps where swapping is secondary, but the team still wants to give users the ability to perform swaps without disrupting the main interface.
+
+![The Jupiter Plugin Playground](https://static.academy.jup.ag/images/illustrations/plugin_playground.png)
 
 ### Referral Fees
 
@@ -49,7 +51,7 @@ Jupiter runs a referral fee program for applications that integrate Jupiter Plug
 
 ### How to Integrate Jupiter Plugin
 
-**Step 1: Visit the Plugin Configurator.**
+**Step 1: Visit the Plugin Playground.**
 
 Go to [plugin.jup.ag](https://plugin.jup.ag/). There, you'll find an interactive playground where you can configure every customization option and see the result rendered live.
 
@@ -79,7 +81,7 @@ If your app already has a wallet provider, enable wallet passthrough so users do
 
 **Step 8: Create Your Referral Account.**
 
-Set up your referral account via the referral dashboard at [developers.jup.ag](https://developers.jup.ag/).
+Set up your referral account via the referral dashboard at [referral.jup.ag](https://referral.jup.ag/).
 
 **Step 9: Test Your Integration.**
 
